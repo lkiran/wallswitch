@@ -1,34 +1,92 @@
-
 #ifndef RgbLed_h
 #define RgbLed_h
+#include "RGB.h"
+
 
 class RgbLed
 {
-public:
-    class Color;
-    RgbLed();
-};
+private:
+    byte redPin;
+    byte greenPin;
+    byte bluePin;
+    RGB color;
+    bool active = true;
 
-RgbLed::RgbLed()
-{
-}
-
-class RgbLed::Color
-{
-public:
-    Color(byte red = 0, byte green = 0, byte blue = 0, double alpha = 1)
+    void driveLeds(RGB color)
     {
-        this->red = red;
-        this->green = green;
-        this->blue = blue;
-        this->alpha = alpha;
+        if (this->redPin)
+        {
+            ledcWrite(1, color.getRed());
+        }
+
+        if (this->greenPin)
+        {
+            ledcWrite(2, color.getGreen());
+        }
+
+        if (this->bluePin)
+        {
+            ledcWrite(3, color.getBlue());
+        }
     }
 
-private:
-    byte red;
-    byte green;
-    byte blue;
-    double alpha;
+public:
+    RgbLed()
+    {
+    }
+
+    RgbLed(byte redPin, byte greenPin, byte bluePin)
+    {
+        this->redPin = redPin;
+        this->greenPin = greenPin;
+        this->bluePin = bluePin;
+
+        if (this->redPin)
+        {
+            ledcAttachPin(redPin, 1); // assign led pin to channel
+            ledcSetup(1, 12000, 8);   // 12 kHz PWM, 8-bit resolution
+        }
+
+        if (this->greenPin)
+        {
+            ledcAttachPin(greenPin, 2);
+            ledcSetup(2, 12000, 8);
+        }
+
+        if (this->bluePin)
+        {
+            ledcAttachPin(bluePin, 3);
+            ledcSetup(3, 12000, 8);
+        }
+    }
+
+    void setColor(RGBA color)
+    {
+        this->setColor(color.toRGB());
+    }
+
+    void setColor(RGB color)
+    {
+        this->driveLeds(color);
+        this->color = color;
+    }
+
+    void turnOn()
+    {
+        this->active = true;
+        this->setColor(this->color);
+    }
+
+    void turnOff()
+    {
+        this->active = false;
+        this->driveLeds(black);
+    }
+
+    RGB getColor(void)
+    {
+        return this->color;
+    }
 };
 
 #endif

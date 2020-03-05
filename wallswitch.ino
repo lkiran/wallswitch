@@ -23,6 +23,7 @@ void setup()
 
   Serial.begin(921600);
   Serial.println("---------------Ready---------------");
+  rgbLedBottomLeft.setColor(white);
 }
 
 void loop()
