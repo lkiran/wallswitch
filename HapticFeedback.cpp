@@ -7,6 +7,7 @@ HapticFeedback::HapticFeedback()
 HapticFeedback::HapticFeedback(int pin)
 {
   this->pin = pin;
+  Serial.println("HapticFeedback");
 }
 
 void HapticFeedback::setOutput(bool state)

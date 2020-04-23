@@ -3,6 +3,7 @@
 Wallswitch::Wallswitch(int pin, int activeLow, bool pullupActive)
     : OneButton(pin, activeLow, pullupActive)
 {
+    Serial.println("Wallswitch");
 }
 
 void Wallswitch::setHaptic(HapticFeedback haptic)

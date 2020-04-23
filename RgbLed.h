@@ -58,6 +58,7 @@ public:
             ledcAttachPin(bluePin, 3);
             ledcSetup(3, 12000, 8);
         }
+         Serial.println("RgbLed");
     }
 
     void setColor(RGBA color)

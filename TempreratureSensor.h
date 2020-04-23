@@ -10,6 +10,7 @@ public:
     TempreratureSensor(int pin)
     {
         this->_pin = pin;
+        Serial.println("TempreratureSensor");
     }
 
     void update()
