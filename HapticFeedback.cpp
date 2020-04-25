@@ -7,11 +7,12 @@ HapticFeedback::HapticFeedback()
 HapticFeedback::HapticFeedback(int pin)
 {
   this->pin = pin;
-  Serial.println("HapticFeedback");
+  pinMode(pin, OUTPUT);
 }
 
 void HapticFeedback::setOutput(bool state)
 {
+  digitalWrite(pin, state);
 }
 
 void HapticFeedback::update()
@@ -29,15 +30,17 @@ void HapticFeedback::update()
   }
   else
   {
+    Serial.println(this->activeInstruction.instructionType);
     if ((now - this->activatedAt) >= this->activeInstruction.duration)
     {
       this->activeInstruction.instructionType = idle;
-      this->setOutput(false);
+      this->setOutput(LOW);
     }
   }
 }
 
 void HapticFeedback::poke()
 {
-  this->instructionQueue.push_back(Instruction{on, 100});
+  this->instructionQueue.push_back(HapticFeedback::Instruction{on, 300});
+  this->instructionQueue.push_back(HapticFeedback::Instruction{off, 100});
 }

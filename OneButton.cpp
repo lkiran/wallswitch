@@ -103,6 +103,11 @@ void OneButton::reset(void)
   _isLongPressed = false;
 }
 
+int OneButton::getPin(void)
+{
+  return _pin;
+}
+
 /**
  * @brief Check input of the configured pin and then advance the finite state
  * machine (FSM).

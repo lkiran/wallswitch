@@ -58,8 +58,8 @@ public:
   virtual void handleDoubleClick(void);
   virtual void handlePress(void);
   virtual void handleLongPressStart(void);
-  virtual void handleLongPressStop(void);
   virtual void handleDuringLongPress(void);
+  virtual void handleLongPressStop(void);
 
 
   // ----- State machine functions -----
@@ -79,6 +79,7 @@ public:
 
   bool isLongPressed();
   int getPressedTicks();
+  int getPin();
   void reset(void);
 
 private:

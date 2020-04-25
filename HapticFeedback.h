@@ -8,7 +8,7 @@ enum InstructionTypes
 {
   off = 0,
   on = 1,
-  idle
+  idle = 2,
 };
 
 class HapticFeedback
@@ -21,8 +21,8 @@ private:
   };
 
   int pin;
-  std::vector<Instruction> instructionQueue;
-  Instruction activeInstruction = Instruction{idle};
+  std::vector<HapticFeedback::Instruction> instructionQueue;
+  Instruction activeInstruction = HapticFeedback::Instruction{idle};
   unsigned long activatedAt;
   void setOutput(bool);
 

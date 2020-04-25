@@ -57,11 +57,11 @@ private:
 
 #endif
 
-const RGB white(255, 255, 255);
-const RGB red(255, 0, 0);
-const RGB green(0, 255, 0);
-const RGB blue(0, 0, 255);
-const RGB cyan(0, 255, 255);
-const RGB magenta(255, 0, 255);
-const RGB yellow(255, 255, 0);
+const RGB white(128, 128, 128);
+const RGB red(128, 0, 0);
+const RGB green(0, 128, 0);
+const RGB blue(0, 0, 128);
+const RGB cyan(0, 128, 128);
+const RGB magenta(128, 0, 128);
+const RGB yellow(128, 128, 0);
 const RGB black(0, 0, 0);
