@@ -30,7 +30,6 @@ void HapticFeedback::update()
   }
   else
   {
-    Serial.println(this->activeInstruction.instructionType);
     if ((now - this->activatedAt) >= this->activeInstruction.duration)
     {
       this->activeInstruction.instructionType = idle;
