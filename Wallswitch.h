@@ -6,7 +6,7 @@ class Wallswitch : public OneButton
 {
 private:
     HapticFeedback *haptic;
-    RgbLed led;
+    RgbLed *led;
 
     virtual void handlePress(void);
     virtual void handleClick(void);
@@ -18,5 +18,5 @@ private:
 public:
     Wallswitch(int pin, int activeLow, bool pullupActive = true);
     void setHaptic(HapticFeedback *haptic);
-    void setLed(RgbLed led);
+    void setLed(RgbLed *led);
 };

@@ -12,8 +12,9 @@ void Wallswitch::setHaptic(HapticFeedback *haptic)
     this->haptic = haptic;
 }
 
-void Wallswitch::setLed(RgbLed led)
+void Wallswitch::setLed(RgbLed *led)
 {
+   Serial.println("Wallswitch::setLed");
     this->led = led;
 }
 
@@ -27,6 +28,7 @@ void Wallswitch::handleClick()
 {
    Serial.println(this->getPin());
    Serial.println(" handleClick");
+   this->led->setColor(RGB::blue);
 }
 
 void Wallswitch::handleDoubleClick()
@@ -35,6 +37,7 @@ void Wallswitch::handleDoubleClick()
    Serial.println(" handleDoubleClick");
    this->haptic->poke();
    this->haptic->poke();
+    this->led->setColor(RGB::green);
 }
 
 void Wallswitch::handleLongPressStart()
@@ -42,6 +45,7 @@ void Wallswitch::handleLongPressStart()
    Serial.println(this->getPin());
    Serial.println(" handleLongPressStart");
    this->haptic->poke();
+    this->led->setColor(RGB::red);
 }
 
 // void Wallswitch::handleDuringLongPress()
