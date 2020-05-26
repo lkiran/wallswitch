@@ -7,19 +7,23 @@
 class RgbLed
 {
 private:
-	byte redPin;
-	byte greenPin;
-	byte bluePin;
+	int redPin;
+	int greenPin;
+	int bluePin;
+	
+	int redChannel;
+	int greenChannel;
+	int blueChannel;
 	RGB color;
 	bool active = true;
 
 	static int channel;
+	static int newChannel();
 
 	void driveLeds(RGB color);
 
 public:
-	RgbLed();
-	RgbLed(byte redPin, byte greenPin, byte bluePin);
+	RgbLed(int redPin, int greenPin, int bluePin);
 
 	void setColor(RGBA color);
 	void setColor(RGB color);

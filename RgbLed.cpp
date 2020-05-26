@@ -1,129 +1,105 @@
-#ifndef RgbLed_h
-#define RgbLed_h
-#include "RGB.h"
+#include "RgbLed.h"
 
-class RgbLed
+int RgbLed::channel = 3; // Channel must be in range of 0-16
+
+void RgbLed::driveLeds(RGB color)
 {
-private:
-	byte redPin;
-	byte greenPin;
-	byte bluePin;
-	RGB color;
-	bool active = true;
-
-	static int channel;
-
-	void driveLeds(RGB color)
+	Serial.println("RgbLed::driveLeds");
+	if (this->redPin)
 	{
-		Serial.println("RgbLed::driveLeds");
-		if (this->redPin)
-		{
-			Serial.print("ledcWrite(");
-			Serial.print(1);
-			Serial.print(", ");
-			Serial.print(color.getRed());
-			Serial.println(");");
-			ledcWrite(1, color.getRed());
-		}
-
-		if (this->greenPin)
-		{
-			Serial.print("ledcWrite(");
-			Serial.print(2);
-			Serial.print(", ");
-			Serial.print(color.getGreen());
-			Serial.println(");");
-			ledcWrite(2, color.getGreen());
-		}
-
-		if (this->bluePin)
-		{
-			Serial.print("ledcWrite(");
-			Serial.print(3);
-			Serial.print(", ");
-			Serial.print(color.getBlue());
-			Serial.println(");");
-			ledcWrite(3, color.getBlue());
-		}
-		Serial.println("RgbLed::driveLeds completed");
+		Serial.print("ledcWrite(");
+		Serial.print(this->redChannel);
+		Serial.print(", ");
+		Serial.print(color.getRed());
+		Serial.println(");");
+		ledcWrite(this->redChannel, 255 - color.getRed());
 	}
 
-public:
-	RgbLed()
+	if (this->greenPin)
 	{
+		Serial.print("ledcWrite(");
+		Serial.print(this->greenChannel);
+		Serial.print(", ");
+		Serial.print(color.getGreen());
+		Serial.println(");");
+		ledcWrite(this->greenChannel, 255 - color.getGreen());
 	}
 
-	RgbLed(byte redPin, byte greenPin, byte bluePin)
+	if (this->bluePin)
 	{
-		Serial.println("RgbLed start");
-		this->redPin = redPin;
-		this->greenPin = greenPin;
-		this->bluePin = bluePin;
+		Serial.print("ledcWrite(");
+		Serial.print(this->blueChannel);
+		Serial.print(", ");
+		Serial.print(color.getBlue());
+		Serial.println(");");
+		ledcWrite(this->blueChannel, 255 - color.getBlue());
+	}
+	Serial.println("RgbLed::driveLeds completed");
+}
 
-		if (this->redPin)
-		{
-			pinMode(this->redPin, OUTPUT);
-			ledcAttachPin(redPin, this->channel); // assign led pin to channel
-			this->channel++;
-			ledcSetup(1, 12000, 8); // 12 kHz PWM, 8-bit resolution
-			Serial.print("Red Ch. ");
-			Serial.print(this->channel);
-			Serial.println(" end");
-		}
+RgbLed::RgbLed(int redPin, int greenPin, int bluePin)
+{
+	this->redPin = redPin;
+	this->greenPin = greenPin;
+	this->bluePin = bluePin;
 
-		if (this->greenPin)
-		{
-			pinMode(this->greenPin, OUTPUT);
-			ledcAttachPin(greenPin, this->channel);
-			this->channel++;
-			ledcSetup(2, 12000, 8);
-			Serial.print("Green Ch. ");
-			Serial.print(this->channel);
-			Serial.println(" end");
-		}
-
-		if (this->bluePin)
-		{
-			pinMode(this->bluePin, OUTPUT);
-			ledcAttachPin(bluePin, this->channel);
-			this->channel++;
-			ledcSetup(3, 12000, 8);
-			Serial.print("Blue Ch. ");
-			Serial.print(this->channel);
-			Serial.println(" end");
-		}
-		Serial.println("RgbLed end");
+	if (this->redPin > 0)
+	{
+		this->redChannel = RgbLed::newChannel();
+		pinMode(this->redPin, OUTPUT);
+		ledcAttachPin(redPin, this->redChannel); // assign led pin to channel
+		ledcSetup(this->redChannel, 12000, 8);	 // 12 kHz PWM, 8-bit resolution
 	}
 
-	void setColor(RGBA color)
+	if (this->greenPin > 0)
 	{
-		this->setColor(color.toRGB());
+		this->greenChannel = RgbLed::newChannel();
+		pinMode(this->greenPin, OUTPUT);
+		ledcAttachPin(greenPin, this->greenChannel);
+		ledcSetup(this->greenChannel, 12000, 8);
 	}
 
-	void setColor(RGB color)
+	if (this->bluePin > 0)
 	{
-		Serial.println("RgbLed::setColor");
-		this->driveLeds(color);
-		this->color = color;
-		Serial.println("RgbLed::setColor completed");
+		this->blueChannel = RgbLed::newChannel();
+		pinMode(this->bluePin, OUTPUT);
+		ledcAttachPin(bluePin, this->blueChannel);
+		ledcSetup(this->blueChannel, 12000, 8);
 	}
+}
 
-	void turnOn()
-	{
-		this->active = true;
-		this->setColor(this->color);
-	}
+int RgbLed::newChannel()
+{
+	RgbLed::channel++;
+	return RgbLed::channel;
+}
 
-	void turnOff()
-	{
-		this->active = false;
-		this->driveLeds(black);
-	}
+void RgbLed::setColor(RGBA color)
+{
+	this->setColor(color.toRGB());
+}
 
-	RGB getColor(void)
-	{
-		return this->color;
-	}
-};
+void RgbLed::setColor(RGB color)
+{
+	Serial.println("RgbLed::setColor");
+	this->driveLeds(color);
+	this->color = color;
+	Serial.println("RgbLed::setColor completed");
+}
 
-#endif
+void RgbLed::turnOn()
+{
+	this->active = true;
+	this->setColor(this->color);
+}
+
+void RgbLed::turnOff()
+{
+	this->active = false;
+	this->driveLeds(RGB::black);
+}
+
+RGB RgbLed::getColor(void)
+{
+	return this->color;
+}
