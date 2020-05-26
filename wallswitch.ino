@@ -7,8 +7,8 @@
 // TempreratureSensor tempreratureSensor(25);
 HapticFeedback hapticFeedback(23);
 
-RgbLed rgbLedTopLeft(36, 34, 36);
-// RgbLed rgbLedTopRight(18, 5, 17);
+// RgbLed rgbLedTopLeft(36, 34, 36);
+RgbLed rgbLedTopRight(25, 33, 32);
 // RgbLed rgbLedBottomLeft(14, 12, 13);
 // RgbLed rgbLedBottomRight(4, 2, 15);
 
@@ -27,8 +27,10 @@ void setup()
   buttonBottomLeft.setHaptic(&hapticFeedback);
   buttonBottomRight.setHaptic(&hapticFeedback);
 
+  buttonTopRight.setLed(&rgbLedTopRight);
+
   // rgbLedTopLeft.setColor(blue);
-  // rgbLedTopRight.setColor(blue);
+  rgbLedTopRight.setColor(RGB::white);
   // rgbLedBottomLeft.setColor(blue);
   // rgbLedBottomRight.setColor(blue);
 
