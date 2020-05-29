@@ -4,15 +4,15 @@
 #include "RgbLed.h"
 #include "TempreratureSensor.h"
 
-// TempreratureSensor tempreratureSensor(25);
+// TempreratureSensor tempreratureSensor(26);
 HapticFeedback hapticFeedback(23);
 
-// RgbLed rgbLedTopLeft(36, 34, 36);
+RgbLed rgbLedTopLeft(18, 5, 17);
 RgbLed rgbLedTopRight(25, 33, 32);
-// RgbLed rgbLedBottomLeft(14, 12, 13);
-// RgbLed rgbLedBottomRight(4, 2, 15);
+RgbLed rgbLedBottomLeft(4, 16, 2);
+RgbLed rgbLedBottomRight(12, 14, 27);
 
-Wallswitch buttonTopLeft(21, false);
+Wallswitch buttonTopLeft(19, false);
 Wallswitch buttonTopRight(35, false);
 Wallswitch buttonBottomLeft(15, false);
 Wallswitch buttonBottomRight(13, false);
@@ -27,12 +27,15 @@ void setup()
   buttonBottomLeft.setHaptic(&hapticFeedback);
   buttonBottomRight.setHaptic(&hapticFeedback);
 
+  buttonTopLeft.setLed(&rgbLedTopLeft);
   buttonTopRight.setLed(&rgbLedTopRight);
+  buttonBottomLeft.setLed(&rgbLedBottomLeft);
+  buttonBottomRight.setLed(&rgbLedBottomRight);
 
-  // rgbLedTopLeft.setColor(blue);
+  rgbLedTopLeft.setColor(RGB::white);
   rgbLedTopRight.setColor(RGB::white);
-  // rgbLedBottomLeft.setColor(blue);
-  // rgbLedBottomRight.setColor(blue);
+  rgbLedBottomLeft.setColor(RGB::white);
+  rgbLedBottomRight.setColor(RGB::white);
 
   Serial.println("---------------setup completed---------------");
 }
