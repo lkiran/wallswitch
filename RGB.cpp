@@ -6,39 +6,55 @@ RGB::RGB()
 
 RGB::RGB(int red = 0, int green = 0, int blue = 0)
 {
-    this->redValue = red;
-    this->greenValue = green;
-    this->blueValue = blue;
+	this->redValue = red;
+	this->greenValue = green;
+	this->blueValue = blue;
 }
 
 int RGB::getRed()
 {
-    return this->redValue;
+	return this->redValue;
 }
 
 int RGB::getGreen()
 {
-    return this->greenValue;
+	return this->greenValue;
 }
 
 int RGB::getBlue()
 {
-    return this->blueValue;
+	return this->blueValue;
+}
+
+bool RGB::operator==(const RGB &rhs) const
+{
+	if (this->redValue != rhs.redValue || this->greenValue != rhs.greenValue || this->blueValue != rhs.blueValue)
+		return false;
+
+	return true;
+}
+
+bool RGB::operator!=(const RGB &rhs) const
+{
+	if (this->redValue == rhs.redValue && this->greenValue == rhs.greenValue && this->blueValue == rhs.blueValue)
+		return false;
+
+	return true;
 }
 
 RGBA::RGBA(RGB color) : RGB(color)
 {
-    this->alpha = 1;
+	this->alpha = 1;
 }
 
 RGBA::RGBA(int red = 0, int green = 0, int blue = 0, double alpha = 1) : RGB(red, green, blue)
 {
-    this->alpha = alpha;
+	this->alpha = alpha;
 }
 
 RGB RGBA::toRGB(void)
 {
-    return RGB(this->redValue * this->alpha, this->greenValue * this->alpha, this->blueValue * this->alpha);
+	return RGB(this->redValue * this->alpha, this->greenValue * this->alpha, this->blueValue * this->alpha);
 }
 
 RGB RGB::white(255, 255, 255);

@@ -4,37 +4,39 @@
 class RGB
 {
 public:
-    RGB();
-    RGB(int red, int green, int blue);
+	RGB();
+	RGB(int red, int green, int blue);
+	bool operator==(const RGB &rhs) const;
+	bool operator!=(const RGB &rhs) const;
 
-    int getRed();
-    int getGreen();
-    int getBlue();
+	int getRed();
+	int getGreen();
+	int getBlue();
 
-    static RGB white;
-    static RGB red;
-    static RGB green;
-    static RGB blue;
-    static RGB cyan;
-    static RGB magenta;
-    static RGB yellow;
-    static RGB black;
+	static RGB white;
+	static RGB red;
+	static RGB green;
+	static RGB blue;
+	static RGB cyan;
+	static RGB magenta;
+	static RGB yellow;
+	static RGB black;
 
 protected:
-    int redValue;
-    int greenValue;
-    int blueValue;
+	int redValue;
+	int greenValue;
+	int blueValue;
 };
 
 class RGBA : public RGB
 {
 public:
-    RGBA(RGB color);
-    RGBA(int red, int green, int blue, double alpha);
-    RGB toRGB(void);
+	RGBA(RGB color);
+	RGBA(int red, int green, int blue, double alpha);
+	RGB toRGB(void);
 
 private:
-    double alpha;
+	double alpha;
 };
 
 #endif
