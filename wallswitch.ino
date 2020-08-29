@@ -1,8 +1,10 @@
-#include "HapticFeedback.h"
-#include "LinkedList.h"
 #include "Wallswitch.h"
+#include "WallswitchWiFiObserver.h"
+#include "HapticFeedback.h"
 #include "RgbLed.h"
 #include "TempreratureSensor.h"
+#include "WiFiConnection.h"
+
 
 // TempreratureSensor tempreratureSensor(26);
 HapticFeedback hapticFeedback(23);
@@ -36,6 +38,11 @@ void setup()
   rgbLedTopRight.setColor(RGB::white);
   rgbLedBottomLeft.setColor(RGB::white);
   rgbLedBottomRight.setColor(RGB::white);
+
+  WiFiConnection &wifiConnection = WiFiConnection::instance();
+  WallswitchWiFiObserver(&wifiConnection, &rgbLedTopLeft);
+
+  wifiConnection.connect((char*)"ALTINTAS2", (char*)"AB12CD34");
 
   Serial.println("---------------setup completed---------------");
 }
