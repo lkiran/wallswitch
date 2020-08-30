@@ -20,22 +20,29 @@ WiFiConnection &WiFiConnection::instance()
     return instance;
 }
 
+wl_status_t WiFiConnection::getStatus()
+{
+    return WiFi.status();
+}
+
+String WiFiConnection::getSSID()
+{
+    return this->ssid;
+}
+
+IPAddress WiFiConnection::getIP()
+{
+    return WiFi.localIP();
+}
+
 void WiFiConnection::connect(char *ssid, char *password)
 {
-    Serial.print("Connecting to ");
-    Serial.println(ssid);
-
     Notify();
     WiFi.begin(ssid, password);
-
-    while (WiFi.status() != WL_CONNECTED)
+    while (this->getStatus() != WL_CONNECTED)
     {
-        delay(500);
-        Serial.print(".");
+        delay(1000);
+        Notify();
     }
     Notify();
-    Serial.println("");
-    Serial.println("WiFi connected");
-    Serial.println("IP address: ");
-    Serial.println(WiFi.localIP());
 }

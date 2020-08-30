@@ -1,11 +1,10 @@
 #include <WiFi.h>
 #include "Observable.h"
 
-
 #ifndef WiFiConnection_h
 #define WiFiConnection_h
 
-class WiFiConnection: public Subject
+class WiFiConnection : public Subject
 {
 public:
     static WiFiConnection &instance();
@@ -14,8 +13,11 @@ public:
     void operator=(WiFiConnection const &) = delete; // Don't forget to disable copy
 
     WiFiClient client;
-    void connect(char *ssid, char *password);
 
+    void connect(char *ssid, char *password);
+    wl_status_t getStatus();
+    IPAddress getIP();
+    String getSSID();
 
 private:
     WiFiConnection();  // forbid create instance outside

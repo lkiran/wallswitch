@@ -4,7 +4,7 @@
 #include "RgbLed.h"
 #include "TempreratureSensor.h"
 #include "WiFiConnection.h"
-
+#include "MqttConnection.h"
 
 // TempreratureSensor tempreratureSensor(26);
 HapticFeedback hapticFeedback(23);
@@ -40,9 +40,11 @@ void setup()
   rgbLedBottomRight.setColor(RGB::white);
 
   WiFiConnection &wifiConnection = WiFiConnection::instance();
-  WallswitchWiFiObserver(&wifiConnection, &rgbLedTopLeft);
+  WallswitchWiFiObserver(wifiConnection, rgbLedTopLeft);
+  wifiConnection.connect((char *)"ALTINTAS2", (char *)"AB12CD34");
 
-  wifiConnection.connect((char*)"ALTINTAS2", (char*)"AB12CD34");
+  MqttConnection &mqttConnection = MqttConnection::instance();
+  mqttConnection.configure((char *)"10.0.0.51");
 
   Serial.println("---------------setup completed---------------");
 }
