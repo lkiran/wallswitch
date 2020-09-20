@@ -45,6 +45,7 @@ void setup()
 
   MqttConnection &mqttConnection = MqttConnection::instance();
   mqttConnection.configure((char *)"10.0.0.51");
+  mqttConnection.connect();
 
   Serial.println("---------------setup completed---------------");
 }

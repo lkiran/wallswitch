@@ -34,7 +34,7 @@ void WallswitchWiFiObserver::Update(Subject &subject)
         {
             Serial.println("");
             Serial.println("WiFi connected");
-            Serial.println("IP address: ");
+            Serial.print("IP address: ");
             Serial.println(_wiFiConnection.getIP());
             this->_led.setColor(RGB::black);
         }

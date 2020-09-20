@@ -1,4 +1,5 @@
 
+#include <ESP.h>
 #include "WiFiConnection.h"
 #include "PubSubClient.h"
 
@@ -8,7 +9,7 @@
 class MqttConnection
 {
 private:
-    PubSubClient *client;
+    PubSubClient client;
     char *serverAddress;
     int mqttPort;
 
@@ -26,6 +27,7 @@ public:
     int getMqttPort();
 
     void configure(char *serverAddress, int port = 1883);
+    void connect();
 };
 
 #endif

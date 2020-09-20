@@ -16,7 +16,6 @@ WiFiConnection &WiFiConnection::instance()
     // create instance by lazy initialization
     // guaranteed to be destroyed
     static WiFiConnection instance;
-
     return instance;
 }
 
@@ -37,6 +36,8 @@ IPAddress WiFiConnection::getIP()
 
 void WiFiConnection::connect(char *ssid, char *password)
 {
+    this->ssid = ssid;
+    this->password = password;
     Notify();
     WiFi.begin(ssid, password);
     while (this->getStatus() != WL_CONNECTED)

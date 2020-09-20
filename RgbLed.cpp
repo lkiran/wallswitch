@@ -4,37 +4,20 @@ int RgbLed::channel = 3; // Channel must be in range of 0-16
 
 void RgbLed::driveLeds(RGB color)
 {
-	Serial.println("RgbLed::driveLeds");
 	if (this->redPin)
 	{
-		Serial.print("ledcWrite(");
-		Serial.print(this->redChannel);
-		Serial.print(", ");
-		Serial.print(color.getRed());
-		Serial.println(");");
 		ledcWrite(this->redChannel, 255 - color.getRed());
 	}
 
 	if (this->greenPin)
 	{
-		Serial.print("ledcWrite(");
-		Serial.print(this->greenChannel);
-		Serial.print(", ");
-		Serial.print(color.getGreen());
-		Serial.println(");");
 		ledcWrite(this->greenChannel, 255 - color.getGreen());
 	}
 
 	if (this->bluePin)
 	{
-		Serial.print("ledcWrite(");
-		Serial.print(this->blueChannel);
-		Serial.print(", ");
-		Serial.print(color.getBlue());
-		Serial.println(");");
 		ledcWrite(this->blueChannel, 255 - color.getBlue());
 	}
-	Serial.println("RgbLed::driveLeds completed");
 }
 
 RgbLed::RgbLed(int redPin, int greenPin, int bluePin)
@@ -81,10 +64,8 @@ void RgbLed::setColor(RGBA color)
 
 void RgbLed::setColor(RGB color)
 {
-	Serial.println("RgbLed::setColor");
 	this->driveLeds(color);
 	this->color = color;
-	Serial.println("RgbLed::setColor completed");
 }
 
 void RgbLed::turnOn()

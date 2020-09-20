@@ -10,28 +10,29 @@ MqttConnection::~MqttConnection()
 
 MqttConnection &MqttConnection::instance()
 {
-    static MqttConnection instance;
+  static MqttConnection instance;
 
-    return instance;
+  return instance;
 }
 
 char *MqttConnection::getServerAddress()
 {
-    return this->serverAddress;
+  return this->serverAddress;
 }
 
 int MqttConnection::getMqttPort()
 {
-    return this->mqttPort;
+  return this->mqttPort;
 }
 
-
-void MqttConnection::receivedCallback(char* topic, byte* payload, unsigned int length) {
+void MqttConnection::receivedCallback(char *topic, byte *payload, unsigned int length)
+{
   Serial.print("Message received: ");
   Serial.println(topic);
 
   Serial.print("payload: ");
-  for (int i = 0; i < length; i++) {
+  for (int i = 0; i < length; i++)
+  {
     Serial.print((char)payload[i]);
   }
   Serial.println();
@@ -39,12 +40,55 @@ void MqttConnection::receivedCallback(char* topic, byte* payload, unsigned int l
 
 void MqttConnection::configure(char *serverAddress, int port)
 {
-    WiFiConnection &wifiConnection = WiFiConnection::instance();
-    PubSubClient pubSubclient(wifiConnection.client);
-    this->serverAddress = serverAddress;
-    this->mqttPort = port;
-    pubSubclient.setServer(this->serverAddress, this->mqttPort);
-    pubSubclient.setCallback(MqttConnection::receivedCallback);
-    this->client = &pubSubclient;
+  this->serverAddress = serverAddress;
+  this->mqttPort = port;
+  WiFiConnection &wifiConnection = WiFiConnection::instance();
+  PubSubClient pubSubclient(wifiConnection.client);
+  pubSubclient.setServer(this->serverAddress, this->mqttPort);
+  pubSubclient.setCallback(MqttConnection::receivedCallback);
+  this->client = pubSubclient;
 }
 
+String mac2String(byte ar[])
+{
+  String s;
+  for (byte i = 0; i < 6; ++i)
+  {
+    char buf[3];
+    sprintf(buf, "%02X", ar[i]); // J-M-L: slight modification, added the 0 in the format for padding
+    s += buf;
+    if (i < 5)
+      s += ':';
+  }
+  return s;
+}
+
+void MqttConnection::connect()
+{
+  /* Loop until reconnected */
+  while (!this->client.connected())
+  {
+    unsigned long long chipid = ESP.getEfuseMac();
+    String mac = mac2String((byte *)&chipid);
+    Serial.print("Chip ID = ");
+    Serial.println(mac);
+
+    Serial.println("MQTT connecting ...");
+    /* client ID */
+    String clientId = mac;
+    /* connect now */
+    if (this->client.connect(clientId.c_str()))
+    {
+      Serial.println("connected");
+      /* subscribe topics HERE*/
+    }
+    else
+    {
+      Serial.print("failed, status code =");
+      Serial.print(this->client.state());
+      Serial.println("try again in 5 seconds");
+      /* Wait 5 seconds before retrying */
+      delay(5000);
+    }
+  }
+}
