@@ -798,6 +798,9 @@ PubSubClient &PubSubClient::setServer(String domain, uint16_t port)
 {
     char c_domain[domain.length()];
     strcpy(c_domain, domain.c_str());
+    Serial.print("c_domain: ");
+    Serial.println(c_domain);
+
     this->domain = c_domain;
     this->port = port;
     return *this;

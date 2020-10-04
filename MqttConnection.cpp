@@ -57,7 +57,7 @@ void MqttConnection::connect()
   {
     unsigned long long chipid = ESP.getEfuseMac();
     String mac = mac2String((byte *)&chipid);
-    Serial.print("Chip ID = ");
+    Serial.print("MAC Address: ");
     Serial.println(mac);
 
     Serial.print("MQTT connecting to: ");
@@ -72,8 +72,8 @@ void MqttConnection::connect()
     }
     else
     {
-      Serial.print("failed, status code =");
-      Serial.print(this->client.state());
+      Serial.print("failed, status code ");
+      Serial.println(this->client.state());
       Serial.println("try again in 5 seconds");
       /* Wait 5 seconds before retrying */
       delay(5000);
