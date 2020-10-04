@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <stdint.h>
 #include "RGB.h"
 
 #ifndef RgbLed_h
@@ -7,23 +8,23 @@
 class RgbLed
 {
 private:
-	int redPin;
-	int greenPin;
-	int bluePin;
+	uint8_t redPin;
+	uint8_t greenPin;
+	uint8_t bluePin;
 	
-	int redChannel;
-	int greenChannel;
-	int blueChannel;
+	uint8_t redChannel;
+	uint8_t greenChannel;
+	uint8_t blueChannel;
 	RGB color;
 	bool active = true;
 
-	static int channel;
-	static int newChannel();
+	static uint8_t channel;
+	static uint8_t newChannel();
 
 	void driveLeds(RGB color);
 
 public:
-	RgbLed(int redPin, int greenPin, int bluePin);
+	RgbLed(const uint8_t redPin, const uint8_t greenPin, const uint8_t bluePin);
 
 	void setColor(RGBA color);
 	void setColor(RGB color);

@@ -1,17 +1,19 @@
 #ifndef RGB_h
 #define RGB_h
 
+#include <stdint.h>
+
 class RGB
 {
 public:
 	RGB();
-	RGB(int red, int green, int blue);
+	RGB(const uint8_t red, uint8_t green, uint8_t blue);
 	bool operator==(const RGB &rhs) const;
 	bool operator!=(const RGB &rhs) const;
 
-	int getRed();
-	int getGreen();
-	int getBlue();
+	uint8_t getRed();
+	uint8_t getGreen();
+	uint8_t getBlue();
 
 	static RGB white;
 	static RGB red;
@@ -23,16 +25,16 @@ public:
 	static RGB black;
 
 protected:
-	int redValue;
-	int greenValue;
-	int blueValue;
+	uint8_t redValue;
+	uint8_t greenValue;
+	uint8_t blueValue;
 };
 
 class RGBA : public RGB
 {
 public:
 	RGBA(RGB color);
-	RGBA(int red, int green, int blue, double alpha);
+	RGBA(const uint8_t red, const uint8_t green, const uint8_t blue, const double alpha);
 	RGB toRGB(void);
 
 private:

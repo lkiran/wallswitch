@@ -4,24 +4,24 @@ RGB::RGB()
 {
 }
 
-RGB::RGB(int red = 0, int green = 0, int blue = 0)
+RGB::RGB(const uint8_t red = 0, uint8_t green = 0, uint8_t blue = 0)
 {
 	this->redValue = red;
 	this->greenValue = green;
 	this->blueValue = blue;
 }
 
-int RGB::getRed()
+uint8_t RGB::getRed()
 {
 	return this->redValue;
 }
 
-int RGB::getGreen()
+uint8_t RGB::getGreen()
 {
 	return this->greenValue;
 }
 
-int RGB::getBlue()
+uint8_t RGB::getBlue()
 {
 	return this->blueValue;
 }
@@ -47,7 +47,7 @@ RGBA::RGBA(RGB color) : RGB(color)
 	this->alpha = 1;
 }
 
-RGBA::RGBA(int red = 0, int green = 0, int blue = 0, double alpha = 1) : RGB(red, green, blue)
+RGBA::RGBA(const uint8_t red = 0, const uint8_t green = 0, const uint8_t blue = 0, const double alpha = 1) : RGB(red, green, blue)
 {
 	this->alpha = alpha;
 }
