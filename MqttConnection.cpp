@@ -60,7 +60,8 @@ void MqttConnection::connect()
     Serial.print("Chip ID = ");
     Serial.println(mac);
 
-    Serial.println("MQTT connecting ...");
+    Serial.print("MQTT connecting to: ");
+    Serial.println(this->serverAddress);
     /* client ID */
     String clientId = mac;
     /* connect now */
