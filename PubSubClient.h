@@ -125,7 +125,7 @@ public:
 
    PubSubClient& setServer(IPAddress ip, uint16_t port);
    PubSubClient& setServer(uint8_t * ip, uint16_t port);
-   PubSubClient& setServer(String domain, uint16_t port);
+   PubSubClient& setServer(const char * domain, uint16_t port);
    PubSubClient& setClient(Client& client);
    PubSubClient& setStream(Stream& stream);
    PubSubClient& setKeepAlive(uint16_t keepAlive);

@@ -15,7 +15,7 @@ MqttConnection &MqttConnection::instance()
   return instance;
 }
 
-String MqttConnection::getServerAddress()
+char *MqttConnection::getServerAddress()
 {
   return this->serverAddress;
 }
@@ -26,7 +26,7 @@ int MqttConnection::getMqttPort()
 }
 
 
-void MqttConnection::configure(String serverAddress, int port)
+void MqttConnection::configure(char *serverAddress, int port)
 {
   this->serverAddress = serverAddress;
   this->mqttPort = port;
