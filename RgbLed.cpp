@@ -1,6 +1,6 @@
 #include "RgbLed.h"
 
-int RgbLed::channel = 3; // Channel must be in range of 0-16
+uint8_t RgbLed::channel = 3; // Channel must be in range of 0-16
 
 void RgbLed::driveLeds(RGB color)
 {
@@ -20,7 +20,7 @@ void RgbLed::driveLeds(RGB color)
 	}
 }
 
-RgbLed::RgbLed(int redPin, int greenPin, int bluePin)
+RgbLed::RgbLed(const uint8_t redPin, const uint8_t greenPin, const uint8_t bluePin)
 {
 	this->redPin = redPin;
 	this->greenPin = greenPin;
@@ -30,7 +30,7 @@ RgbLed::RgbLed(int redPin, int greenPin, int bluePin)
 	{
 		this->redChannel = RgbLed::newChannel();
 		pinMode(this->redPin, OUTPUT);
-		ledcAttachPin(redPin, this->redChannel); // assign led pin to channel
+		ledcAttachPin(this->redPin, this->redChannel); // assign led pin to channel
 		ledcSetup(this->redChannel, 12000, 8);	 // 12 kHz PWM, 8-bit resolution
 	}
 
@@ -38,7 +38,7 @@ RgbLed::RgbLed(int redPin, int greenPin, int bluePin)
 	{
 		this->greenChannel = RgbLed::newChannel();
 		pinMode(this->greenPin, OUTPUT);
-		ledcAttachPin(greenPin, this->greenChannel);
+		ledcAttachPin(this->greenPin, this->greenChannel);
 		ledcSetup(this->greenChannel, 12000, 8);
 	}
 
@@ -46,12 +46,12 @@ RgbLed::RgbLed(int redPin, int greenPin, int bluePin)
 	{
 		this->blueChannel = RgbLed::newChannel();
 		pinMode(this->bluePin, OUTPUT);
-		ledcAttachPin(bluePin, this->blueChannel);
+		ledcAttachPin(this->bluePin, this->blueChannel);
 		ledcSetup(this->blueChannel, 12000, 8);
 	}
 }
 
-int RgbLed::newChannel()
+uint8_t RgbLed::newChannel()
 {
 	RgbLed::channel++;
 	return RgbLed::channel;
