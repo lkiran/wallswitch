@@ -15,7 +15,6 @@ private:
 
     MqttConnection();
     ~MqttConnection();
-    static void receivedCallback(char *topic, byte *payload, unsigned int length);
 
 public:
     static MqttConnection &instance();
@@ -28,6 +27,8 @@ public:
 
     void configure(char *serverAddress, int port = 1883);
     void connect();
+
+    void subscribe(String topic, MqttCallback &handler);
 };
 
 #endif

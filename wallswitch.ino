@@ -47,6 +47,8 @@ void setup()
   mqttConnection.configure((char *)"10.0.0.51");
   mqttConnection.connect();
 
+  MqttCallback LedCallback;
+  mqttConnection.subscribe("/led/top-left", LedCallback);
   Serial.println("---------------setup completed---------------");
 }
 
