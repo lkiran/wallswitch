@@ -29,6 +29,8 @@ public:
     void connect();
 
     void subscribe(String topic, MqttCallback &handler);
+    void subscriptions();
+    void tick();
 };
 
 #endif

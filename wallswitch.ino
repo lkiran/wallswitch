@@ -19,6 +19,9 @@ Wallswitch buttonTopRight(35, false);
 Wallswitch buttonBottomLeft(15, false);
 Wallswitch buttonBottomRight(13, false);
 
+WiFiConnection &wifiConnection = WiFiConnection::instance();
+MqttConnection &mqttConnection = MqttConnection::instance();
+
 void setup()
 {
   Serial.begin(115200);
@@ -39,16 +42,14 @@ void setup()
   rgbLedBottomLeft.setColor(RGB::white);
   rgbLedBottomRight.setColor(RGB::white);
 
-  WiFiConnection &wifiConnection = WiFiConnection::instance();
   WallswitchWiFiObserver(wifiConnection, rgbLedTopLeft);
   wifiConnection.connect("ALTINTAS2", "AB12CD34");
 
-  MqttConnection &mqttConnection = MqttConnection::instance();
   mqttConnection.configure((char *)"10.0.0.51");
   mqttConnection.connect();
 
-  MqttCallback LedCallback;
-  mqttConnection.subscribe("/led/top-left", LedCallback);
+  mqttConnection.subscriptions();
+
   Serial.println("---------------setup completed---------------");
 }
 
@@ -60,5 +61,7 @@ void loop()
   buttonTopRight.tick();
   buttonBottomLeft.tick();
   buttonBottomRight.tick();
+  mqttConnection.tick();
+
   delay(10);
 }

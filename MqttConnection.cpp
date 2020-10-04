@@ -25,7 +25,6 @@ int MqttConnection::getMqttPort()
   return this->mqttPort;
 }
 
-
 void MqttConnection::configure(char *serverAddress, int port)
 {
   this->serverAddress = serverAddress;
@@ -68,6 +67,9 @@ void MqttConnection::connect()
     if (this->client.connect(clientId.c_str()))
     {
       Serial.println("connected");
+      MqttCallback ledCallback;
+      client.subscribe("/led/top-left", ledCallback);
+      client.subscribe("smarthome/room1/led", ledCallback);
       /* subscribe topics HERE*/
     }
     else
@@ -81,6 +83,23 @@ void MqttConnection::connect()
   }
 }
 
- void MqttConnection::subscribe(String topic, MqttCallback &handler){
-   this->client.subscribe(topic, handler);
- }
+void MqttConnection::tick(){
+  this->client.loop();
+}
+
+void MqttConnection::subscribe(String topic, MqttCallback &handler)
+{
+  this->client.subscribe(topic, handler);
+}
+
+void MqttConnection::subscriptions()
+{
+  for (auto it = this->client.callbacks.begin(); it != this->client.callbacks.end(); ++it)
+  {
+    if (it == this->client.callbacks.end())
+      Serial.println("it == this->client.callbacks.end()");
+    else
+      Serial.print("it->first: ");
+    Serial.println(it->first);
+  }
+}
