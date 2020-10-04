@@ -41,7 +41,7 @@ void setup()
 
   WiFiConnection &wifiConnection = WiFiConnection::instance();
   WallswitchWiFiObserver(wifiConnection, rgbLedTopLeft);
-  wifiConnection.connect((char *)"ALTINTAS2", (char *)"AB12CD34");
+  wifiConnection.connect("ALTINTAS2", "AB12CD34");
 
   MqttConnection &mqttConnection = MqttConnection::instance();
   mqttConnection.configure("10.0.0.51");

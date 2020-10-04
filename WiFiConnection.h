@@ -14,7 +14,7 @@ public:
 
     WiFiClient client;
 
-    void connect(char *ssid, char *password);
+    void connect(String ssid, String password);
     wl_status_t getStatus();
     IPAddress getIP();
     String getSSID();
