@@ -1,3 +1,7 @@
+
+#ifndef WALLSWITCHWIFIOBSERVER_h
+#define WALLSWITCHWIFIOBSERVER_h
+
 #include "Observable.h"
 #include "WiFiConnection.h"
 #include "RgbLed.h"
@@ -54,3 +58,5 @@ void WallswitchWiFiObserver::Update(Subject &subject)
         }
     }
 }
+
+#endif /* WALLSWITCHWIFIOBSERVER_h */

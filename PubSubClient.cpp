@@ -6,7 +6,6 @@
 */
 
 #include "PubSubClient.h"
-#include "Arduino.h"
 
 PubSubClient::PubSubClient()
 {

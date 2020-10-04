@@ -1,8 +1,9 @@
-#include <Arduino.h>
-#include <vector>
 
 #ifndef HapticFeedback_h
 #define HapticFeedback_h
+
+#include <Arduino.h>
+#include <vector>
 
 enum InstructionTypes
 {

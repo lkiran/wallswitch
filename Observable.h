@@ -1,8 +1,9 @@
-#include <iostream>
-#include <vector>
 
 #ifndef Observable_h
 #define Observable_h
+
+#include <iostream>
+#include <vector>
 
 class Subject; 
 
