@@ -10,7 +10,7 @@ class MqttConnection
 {
 private:
     PubSubClient client;
-    char *serverAddress;
+    String serverAddress;
     int mqttPort;
 
     MqttConnection();
@@ -22,10 +22,10 @@ public:
     MqttConnection(MqttConnection const &) = delete; // Don't forget to disable copy
     void operator=(MqttConnection const &) = delete; // Don't forget to disable copy
 
-    char *getServerAddress();
+    String getServerAddress();
     int getMqttPort();
 
-    void configure(char *serverAddress, int port = 1883);
+    void configure(String serverAddress, int port = 1883);
     void connect();
 
     void subscribe(String topic, MqttCallback &handler);

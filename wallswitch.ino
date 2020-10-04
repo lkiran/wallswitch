@@ -44,7 +44,7 @@ void setup()
   wifiConnection.connect((char *)"ALTINTAS2", (char *)"AB12CD34");
 
   MqttConnection &mqttConnection = MqttConnection::instance();
-  mqttConnection.configure((char *)"10.0.0.51");
+  mqttConnection.configure("10.0.0.51");
   mqttConnection.connect();
 
   MqttCallback LedCallback;

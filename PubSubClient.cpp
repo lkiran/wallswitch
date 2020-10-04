@@ -794,9 +794,11 @@ PubSubClient &PubSubClient::setServer(IPAddress ip, uint16_t port)
     return *this;
 }
 
-PubSubClient &PubSubClient::setServer(const char *domain, uint16_t port)
+PubSubClient &PubSubClient::setServer(String domain, uint16_t port)
 {
-    this->domain = domain;
+    char c_domain[domain.length()];
+    strcpy(c_domain, domain.c_str());
+    this->domain = c_domain;
     this->port = port;
     return *this;
 }
