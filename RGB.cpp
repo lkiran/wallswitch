@@ -4,7 +4,7 @@ RGB::RGB()
 {
 }
 
-RGB::RGB(const uint8_t red = 0, uint8_t green = 0, uint8_t blue = 0)
+RGB::RGB(const uint8_t red = 0, const uint8_t green = 0, const uint8_t blue = 0)
 {
 	this->redValue = red;
 	this->greenValue = green;

@@ -7,7 +7,7 @@ class RGB
 {
 public:
 	RGB();
-	RGB(const uint8_t red, uint8_t green, uint8_t blue);
+	RGB(const uint8_t red, const uint8_t green, const uint8_t blue);
 	bool operator==(const RGB &rhs) const;
 	bool operator!=(const RGB &rhs) const;
 
