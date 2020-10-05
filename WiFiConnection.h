@@ -1,8 +1,9 @@
-#include <WiFi.h>
-#include "Observable.h"
 
 #ifndef WiFiConnection_h
 #define WiFiConnection_h
+
+#include <WiFi.h>
+#include "Observable.h"
 
 class WiFiConnection : public Subject
 {

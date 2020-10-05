@@ -1,3 +1,7 @@
+
+#ifndef WALLSWITCH_h
+#define WALLSWITCH_h
+
 #include "OneButton.h"
 #include "HapticFeedback.h"
 #include "RgbLed.h"
@@ -20,3 +24,5 @@ public:
     void setHaptic(HapticFeedback *haptic);
     void setLed(RgbLed *led);
 };
+
+#endif /* WALLSWITCH_h */

@@ -1,8 +1,10 @@
-#include <Arduino.h>
-#include "RGB.h"
 
 #ifndef RgbLed_h
 #define RgbLed_h
+
+#include <Arduino.h>
+#include <stdint.h>
+#include "RGB.h"
 
 class RgbLed
 {

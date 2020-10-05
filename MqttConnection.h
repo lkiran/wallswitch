@@ -1,10 +1,10 @@
 
+#ifndef MqttConnection_h
+#define MqttConnection_h
+
 #include <ESP.h>
 #include "WiFiConnection.h"
 #include "PubSubClient.h"
-
-#ifndef MqttConnection_h
-#define MqttConnection_h
 
 class MqttConnection
 {
