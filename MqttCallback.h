@@ -1,7 +1,8 @@
-#include "Arduino.h"
-
 #ifndef MqttCallback_h
 #define MqttCallback_h
+
+#include "Arduino.h"
+#include "RgbLed.h"
 
 class MqttCallback
 {

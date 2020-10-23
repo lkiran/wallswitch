@@ -11,6 +11,15 @@ RGB::RGB(int red = 0, int green = 0, int blue = 0)
 	this->blueValue = blue;
 }
 
+RGB::RGB(String code)
+{
+	long long number = strtoll(&code[1], NULL, 16);
+
+	this->redValue = number >> 16;
+	this->greenValue = number >> 8 & 0xFF;
+	this->blueValue = number & 0xFF;
+}
+
 int RGB::getRed()
 {
 	return this->redValue;

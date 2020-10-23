@@ -6,4 +6,6 @@ void MqttCallback::handle(String topic, String payload)
 {
     Serial.print("payload: ");
     Serial.println(payload);
+    RGB rgb(payload);
+
 }

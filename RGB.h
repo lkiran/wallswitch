@@ -1,10 +1,13 @@
 #ifndef RGB_h
 #define RGB_h
 
+#include <Arduino.h>
+
 class RGB
 {
 public:
 	RGB();
+	RGB(String code);
 	RGB(int red, int green, int blue);
 	bool operator==(const RGB &rhs) const;
 	bool operator!=(const RGB &rhs) const;
