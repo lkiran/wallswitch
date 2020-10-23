@@ -13,15 +13,13 @@ private:
     char *serverAddress;
     int mqttPort;
 
-    MqttConnection();
-    ~MqttConnection();
+    MqttConnection() = default;
+    ~MqttConnection() = default;
+    MqttConnection(const MqttConnection &) = delete;
+    MqttConnection &operator=(const MqttConnection &) = delete;
 
 public:
     static MqttConnection &instance();
-
-    MqttConnection(MqttConnection const &) = delete; // Don't forget to disable copy
-    void operator=(MqttConnection const &) = delete; // Don't forget to disable copy
-
     char *getServerAddress();
     int getMqttPort();
 

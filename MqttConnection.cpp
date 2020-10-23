@@ -1,17 +1,9 @@
 #include "MqttConnection.h"
 
-MqttConnection::MqttConnection()
-{
-}
-
-MqttConnection::~MqttConnection()
-{
-}
-
 MqttConnection &MqttConnection::instance()
 {
+  Serial.print("&MqttConnection::instance()");
   static MqttConnection instance;
-
   return instance;
 }
 
@@ -83,7 +75,9 @@ void MqttConnection::connect()
   }
 }
 
-void MqttConnection::tick(){
+void MqttConnection::tick()
+{
+
   this->client.loop();
 }
 
@@ -96,10 +90,6 @@ void MqttConnection::subscriptions()
 {
   for (auto it = this->client.callbacks.begin(); it != this->client.callbacks.end(); ++it)
   {
-    if (it == this->client.callbacks.end())
-      Serial.println("it == this->client.callbacks.end()");
-    else
-      Serial.print("it->first: ");
     Serial.println(it->first);
   }
 }

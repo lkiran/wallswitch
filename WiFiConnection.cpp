@@ -1,16 +1,5 @@
 #include "WiFiConnection.h"
 
-// Constructor & Dectructor
-WiFiConnection::WiFiConnection()
-{
-}
-
-WiFiConnection::~WiFiConnection()
-{
-}
-
-// methods
-
 WiFiConnection &WiFiConnection::instance()
 {
     // create instance by lazy initialization
