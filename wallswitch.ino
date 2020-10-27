@@ -24,44 +24,42 @@ MqttConnection &mqttConnection = MqttConnection::instance();
 
 void setup()
 {
-  Serial.begin(115200);
-  Serial.println("---------------starting setup---------------");
+	Serial.begin(115200);
+	Serial.println("---------------starting setup---------------");
 
-  buttonTopLeft.setHaptic(&hapticFeedback);
-  buttonTopRight.setHaptic(&hapticFeedback);
-  buttonBottomLeft.setHaptic(&hapticFeedback);
-  buttonBottomRight.setHaptic(&hapticFeedback);
+	buttonTopLeft.setHaptic(&hapticFeedback);
+	buttonTopRight.setHaptic(&hapticFeedback);
+	buttonBottomLeft.setHaptic(&hapticFeedback);
+	buttonBottomRight.setHaptic(&hapticFeedback);
 
-  buttonTopLeft.setLed(&rgbLedTopLeft);
-  buttonTopRight.setLed(&rgbLedTopRight);
-  buttonBottomLeft.setLed(&rgbLedBottomLeft);
-  buttonBottomRight.setLed(&rgbLedBottomRight);
+	buttonTopLeft.setLed(&rgbLedTopLeft);
+	buttonTopRight.setLed(&rgbLedTopRight);
+	buttonBottomLeft.setLed(&rgbLedBottomLeft);
+	buttonBottomRight.setLed(&rgbLedBottomRight);
 
-  rgbLedTopLeft.setColor(RGB::white);
-  rgbLedTopRight.setColor(RGB::white);
-  rgbLedBottomLeft.setColor(RGB::white);
-  rgbLedBottomRight.setColor(RGB::white);
+	rgbLedTopLeft.setColor(RGB::white);
+	rgbLedTopRight.setColor(RGB::white);
+	rgbLedBottomLeft.setColor(RGB::white);
+	rgbLedBottomRight.setColor(RGB::white);
 
-  WallswitchWiFiObserver(wifiConnection, rgbLedTopLeft);
-  wifiConnection.connect("ALTINTAS2", "AB12CD34");
+	WallswitchWiFiObserver(wifiConnection, rgbLedTopLeft);
+	wifiConnection.connect("ALTINTAS2", "AB12CD34");
 
-  mqttConnection.configure((char *)"10.0.0.51");
-  mqttConnection.connect();
+	mqttConnection.configure((char *)"10.0.0.51");
+	mqttConnection.connect();
 
-  mqttConnection.subscriptions();
-
-  Serial.println("---------------setup completed---------------");
+	Serial.println("---------------setup completed---------------");
 }
 
 void loop()
 {
-  // tempreratureSensor.update();
-  hapticFeedback.update();
-  buttonTopLeft.tick();
-  buttonTopRight.tick();
-  buttonBottomLeft.tick();
-  buttonBottomRight.tick();
-  mqttConnection.tick();
+	// tempreratureSensor.update();
+	hapticFeedback.update();
+	buttonTopLeft.tick();
+	buttonTopRight.tick();
+	buttonBottomLeft.tick();
+	buttonBottomRight.tick();
+	mqttConnection.tick();
 
-  delay(10);
+	delay(10);
 }
