@@ -41,9 +41,6 @@ void MqttConnection::connect()
 		if (this->client.connect(Board::getMacAddress().c_str()))
 		{
 			Serial.println("MQTT connected");
-			MqttCallback ledCallback;
-			this->subscribe("/led/top-left", ledCallback);
-			/* subscribe topics HERE*/
 		}
 		else
 		{
@@ -64,7 +61,7 @@ void MqttConnection::tick()
 	this->client.loop();
 }
 
-void MqttConnection::subscribe(String topic, MqttCallback &handler)
+void MqttConnection::subscribe(String topic, MqttCallback *handler)
 {
 	topic = "24:6F:28:AA:30:70" + topic;
 	this->client.subscribe(topic, handler);

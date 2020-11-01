@@ -398,8 +398,6 @@ boolean PubSubClient::loop()
                     memmove(this->buffer + llen + 2, this->buffer + llen + 3, tl);        /* move topic inside buffer 1 byte to front */
                     this->buffer[llen + 2 + tl] = 0;                                      /* end the topic as a 'C' string with \x00 */
                     String topic = String((char *)this->buffer + llen + 2);
-                    Serial.print("Message received: ");
-                    Serial.println(topic);
 
                     std::map<String, MqttCallback *>::iterator callbackPair = this->callbacks.find(topic);
                     if (callbackPair != this->callbacks.end())
@@ -422,6 +420,7 @@ boolean PubSubClient::loop()
                         else
                         {
                             String payload = String((char *)(this->buffer + llen + 3 + tl)).substring(0, len - llen - 3 - tl);
+                            Serial.println(topic + ": " + payload);
                             callback->handle(topic, payload);
                         }
                     }
@@ -678,17 +677,17 @@ boolean PubSubClient::_subscribe(const char *topic, uint8_t qos)
     return false;
 }
 
-void PubSubClient::subscribe(String topic, MqttCallback &handler)
+void PubSubClient::subscribe(String topic, MqttCallback *handler)
 {
     this->subscribe(topic, handler, 0);
 }
 
-void PubSubClient::subscribe(String topic, MqttCallback &handler, uint8_t qos)
+void PubSubClient::subscribe(String topic, MqttCallback *handler, uint8_t qos)
 {
     char c_topic[topic.length()];
     strcpy(c_topic, topic.c_str());
     this->_subscribe(c_topic, qos);
-    this->callbacks.insert({topic, &handler});
+    this->callbacks.insert({topic, handler});
 }
 
 boolean PubSubClient::_unsubscribe(const char *topic)

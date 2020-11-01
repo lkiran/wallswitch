@@ -2,16 +2,12 @@
 #define MqttCallback_h
 
 #include "Arduino.h"
-#include "RgbLed.h"
 
 class MqttCallback
 {
 public:
-    MqttCallback();
-    void setName(String name);
-    void handle(String topic, String payload);
-
-private:
+    MqttCallback() = default;
+    virtual void handle(String topic, String payload) = 0;
 };
 
 #endif

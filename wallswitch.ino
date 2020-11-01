@@ -5,6 +5,7 @@
 #include "TempreratureSensor.h"
 #include "WiFiConnection.h"
 #include "MqttConnection.h"
+#include "LedCallback.h"
 
 // TempreratureSensor tempreratureSensor(26);
 HapticFeedback hapticFeedback(23);
@@ -37,16 +38,25 @@ void setup()
 	buttonBottomLeft.setLed(&rgbLedBottomLeft);
 	buttonBottomRight.setLed(&rgbLedBottomRight);
 
-	rgbLedTopLeft.setColor(RGB::white);
-	rgbLedTopRight.setColor(RGB::white);
-	rgbLedBottomLeft.setColor(RGB::white);
-	rgbLedBottomRight.setColor(RGB::white);
+	rgbLedTopLeft.setColor(RGB::black);
+	rgbLedTopRight.setColor(RGB::black);
+	rgbLedBottomLeft.setColor(RGB::black);
+	rgbLedBottomRight.setColor(RGB::black);
 
 	WallswitchWiFiObserver(wifiConnection, rgbLedTopLeft);
 	wifiConnection.connect("ALTINTAS2", "AB12CD34");
 
 	mqttConnection.configure((char *)"10.0.0.51");
 	mqttConnection.connect();
+	
+	static LedCallback ledCallbackTopLeft = LedCallback(rgbLedTopLeft);
+	static LedCallback ledCallbackTopRight = LedCallback(rgbLedTopRight);
+	static LedCallback ledCallbackBottomLeft = LedCallback(rgbLedBottomLeft);
+	static LedCallback ledCallbackBottomRight = LedCallback(rgbLedBottomRight);
+	mqttConnection.subscribe("/led/top-left", &ledCallbackTopLeft);
+	mqttConnection.subscribe("/led/top-right", &ledCallbackTopRight);
+	mqttConnection.subscribe("/led/bottom-left", &ledCallbackBottomLeft);
+	mqttConnection.subscribe("/led/bottom-right", &ledCallbackBottomRight);
 
 	Serial.println("---------------setup completed---------------");
 }
