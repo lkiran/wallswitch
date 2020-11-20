@@ -2,7 +2,6 @@
 
 LedCallback::LedCallback(RgbLed &led) : _led(led)
 {
-    Serial.println("LedCallback ctor");
 }
 
 void LedCallback::handle(String topic, String payload)

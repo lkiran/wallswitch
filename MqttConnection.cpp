@@ -63,7 +63,7 @@ void MqttConnection::tick()
 
 void MqttConnection::subscribe(String topic, MqttCallback *handler)
 {
-	topic = "24:6F:28:AA:30:70" + topic;
+	topic = WiFi.macAddress() + topic;
 	this->client.subscribe(topic, handler);
 	Serial.println("now subscribing: " + topic);
 }

@@ -38,17 +38,12 @@ void setup()
 	buttonBottomLeft.setLed(&rgbLedBottomLeft);
 	buttonBottomRight.setLed(&rgbLedBottomRight);
 
-	rgbLedTopLeft.setColor(RGB::black);
-	rgbLedTopRight.setColor(RGB::black);
-	rgbLedBottomLeft.setColor(RGB::black);
-	rgbLedBottomRight.setColor(RGB::black);
-
 	WallswitchWiFiObserver(wifiConnection, rgbLedTopLeft);
 	wifiConnection.connect("ALTINTAS2", "AB12CD34");
 
 	mqttConnection.configure((char *)"10.0.0.51");
 	mqttConnection.connect();
-	
+
 	static LedCallback ledCallbackTopLeft = LedCallback(rgbLedTopLeft);
 	static LedCallback ledCallbackTopRight = LedCallback(rgbLedTopRight);
 	static LedCallback ledCallbackBottomLeft = LedCallback(rgbLedBottomLeft);
@@ -59,6 +54,11 @@ void setup()
 	mqttConnection.subscribe("/led/bottom-right", &ledCallbackBottomRight);
 
 	Serial.println("---------------setup completed---------------");
+
+	rgbLedTopLeft.setColor(RGB::black);
+	rgbLedTopRight.setColor(RGB::black);
+	rgbLedBottomLeft.setColor(RGB::black);
+	rgbLedBottomRight.setColor(RGB::black);
 }
 
 void loop()
