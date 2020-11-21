@@ -61,6 +61,21 @@ void MqttConnection::tick()
 	this->client.loop();
 }
 
+boolean MqttConnection::publish(String topic)
+{
+	return publish(topic,"");
+}
+
+boolean MqttConnection::publish(String topic, String payload)
+{
+	topic = WiFi.macAddress() + topic;
+	boolean result = this->client.publish(topic, payload);
+	if (result == false)
+		Serial.println("MQTT publish is failed for " + topic + ":" + payload);
+
+	return result;
+}
+
 void MqttConnection::subscribe(String topic, MqttCallback *handler)
 {
 	topic = WiFi.macAddress() + topic;

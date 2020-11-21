@@ -447,6 +447,11 @@ boolean PubSubClient::loop()
     return false;
 }
 
+boolean PubSubClient::publish(String topic,String payload)
+{
+    return publish(topic.c_str(), payload.c_str());
+}
+
 boolean PubSubClient::publish(const char *topic, const char *payload)
 {
     return publish(topic, (const uint8_t *)payload, payload ? strnlen(payload, this->bufferSize) : 0, false);

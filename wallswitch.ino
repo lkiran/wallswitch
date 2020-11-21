@@ -59,6 +59,7 @@ void setup()
 	rgbLedTopRight.setColor(RGB::black);
 	rgbLedBottomLeft.setColor(RGB::black);
 	rgbLedBottomRight.setColor(RGB::black);
+	mqttConnection.publish("/start");
 }
 
 void loop()

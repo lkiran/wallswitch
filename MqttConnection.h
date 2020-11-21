@@ -25,6 +25,8 @@ public:
     void configure(char *serverAddress, int port = 1883);
     void connect();
 
+    boolean publish(String topic);
+    boolean publish(String topic, String payload);
     void subscribe(String topic, MqttCallback *handler);
     void subscriptions();
     void tick();
