@@ -15,10 +15,10 @@ RgbLed rgbLedTopRight(25, 33, 32);
 RgbLed rgbLedBottomLeft(4, 16, 2);
 RgbLed rgbLedBottomRight(12, 14, 27);
 
-Wallswitch buttonTopLeft(19, false);
-Wallswitch buttonTopRight(35, false);
-Wallswitch buttonBottomLeft(15, false);
-Wallswitch buttonBottomRight(13, false);
+Wallswitch buttonTopLeft("top-left", 19, false);
+Wallswitch buttonTopRight("top-right", 35, false);
+Wallswitch buttonBottomLeft("bottom-left", 15, false);
+Wallswitch buttonBottomRight("bottom-right", 13, false);
 
 WiFiConnection &wifiConnection = WiFiConnection::instance();
 MqttConnection &mqttConnection = MqttConnection::instance();

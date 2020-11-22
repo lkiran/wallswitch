@@ -2,7 +2,6 @@
 
 MqttConnection &MqttConnection::instance()
 {
-	Serial.print("&MqttConnection::instance()");
 	static MqttConnection instance;
 	return instance;
 }
@@ -61,17 +60,25 @@ void MqttConnection::tick()
 	this->client.loop();
 }
 
-boolean MqttConnection::publish(String topic)
+boolean MqttConnection::publish(String &topic)
 {
-	return publish(topic,"");
+	return publish(topic, "");
 }
 
-boolean MqttConnection::publish(String topic, String payload)
+boolean MqttConnection::publish(String topic)
 {
-	topic = WiFi.macAddress() + topic;
-	boolean result = this->client.publish(topic, payload);
+	String t = String(topic);
+	return this->publish(t, "");
+}
+
+boolean MqttConnection::publish(String &topic, String payload)
+{
+	String t = WiFi.macAddress() + topic;
+	boolean result = this->client.publish(t, payload);
 	if (result == false)
-		Serial.println("MQTT publish is failed for " + topic + ":" + payload);
+		Serial.println("publishing failed for " + topic + " " + payload);
+	else
+		Serial.println("published " + topic + " " + payload);
 
 	return result;
 }

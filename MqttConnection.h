@@ -26,7 +26,8 @@ public:
     void connect();
 
     boolean publish(String topic);
-    boolean publish(String topic, String payload);
+    boolean publish(String &topic);
+    boolean publish(String &topic, String payload);
     void subscribe(String topic, MqttCallback *handler);
     void subscriptions();
     void tick();

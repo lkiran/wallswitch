@@ -447,9 +447,14 @@ boolean PubSubClient::loop()
     return false;
 }
 
-boolean PubSubClient::publish(String topic,String payload)
+boolean PubSubClient::publish(String &topic, String payload)
 {
-    return publish(topic.c_str(), payload.c_str());
+    byte *p = (byte *)malloc(payload.length());
+	memcpy(p, payload.c_str(), payload.length());
+    boolean result =  publish(topic.c_str(), payload.c_str());
+	free(p);
+
+    return result;
 }
 
 boolean PubSubClient::publish(const char *topic, const char *payload)

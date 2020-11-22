@@ -66,11 +66,11 @@ RGB RGBA::toRGB(void)
 	return RGB(this->redValue * this->alpha, this->greenValue * this->alpha, this->blueValue * this->alpha);
 }
 
-RGB RGB::white(255, 255, 255);
-RGB RGB::red(255, 0, 0);
-RGB RGB::green(0, 255, 0);
-RGB RGB::blue(0, 0, 255);
-RGB RGB::cyan(0, 255, 255);
-RGB RGB::magenta(255, 0, 255);
-RGB RGB::yellow(255, 255, 0);
+RGB RGB::white(150, 150, 150);
+RGB RGB::red(150, 0, 0);
+RGB RGB::green(0, 150, 0);
+RGB RGB::blue(0, 0, 150);
+RGB RGB::cyan(0, 150, 150);
+RGB RGB::magenta(150, 0, 150);
+RGB RGB::yellow(150, 150, 0);
 RGB RGB::black(0, 0, 0);
