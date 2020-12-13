@@ -2,6 +2,7 @@
 #define MqttConnection_h
 
 #include "Board.h"
+#include "WiFi.h"
 #include "WiFiConnection.h"
 #include "PubSubClient.h"
 
@@ -9,7 +10,7 @@ class MqttConnection
 {
 private:
     PubSubClient client;
-    char *serverAddress;
+    const char *serverAddress;
     int mqttPort;
 
     MqttConnection() = default;
@@ -19,16 +20,15 @@ private:
 
 public:
     static MqttConnection &instance();
-    char *getServerAddress();
+    const char *getServerAddress();
     int getMqttPort();
 
-    void configure(char *serverAddress, int port = 1883);
+    void configure(const char *serverAddress, int port = 1883);
     void connect();
 
-    boolean publish(String topic);
-    boolean publish(String &topic);
-    boolean publish(String &topic, String payload);
-    void subscribe(String topic, MqttCallback *handler);
+    boolean publish(const char *topic);
+    boolean publish(const char *topic, const char *payload);
+    void subscribe(const char *topic, MqttCallback *handler);
     void subscriptions();
     void tick();
 };

@@ -450,9 +450,9 @@ boolean PubSubClient::loop()
 boolean PubSubClient::publish(String &topic, String payload)
 {
     byte *p = (byte *)malloc(payload.length());
-	memcpy(p, payload.c_str(), payload.length());
-    boolean result =  publish(topic.c_str(), payload.c_str());
-	free(p);
+    memcpy(p, payload.c_str(), payload.length());
+    boolean result = publish(topic.c_str(), payload.c_str());
+    free(p);
 
     return result;
 }
@@ -655,7 +655,7 @@ boolean PubSubClient::write(uint8_t header, uint8_t *buf, uint16_t length)
 
 boolean PubSubClient::_subscribe(const char *topic, uint8_t qos)
 {
-    size_t topicLength = strnlen(topic, this->bufferSize);
+    size_t topicLength = String(topic).length();
     if (topic == 0)
     {
         return false;
@@ -687,16 +687,14 @@ boolean PubSubClient::_subscribe(const char *topic, uint8_t qos)
     return false;
 }
 
-void PubSubClient::subscribe(String topic, MqttCallback *handler)
+void PubSubClient::subscribe(const char *topic, MqttCallback *handler)
 {
     this->subscribe(topic, handler, 0);
 }
 
-void PubSubClient::subscribe(String topic, MqttCallback *handler, uint8_t qos)
+void PubSubClient::subscribe(const char *topic, MqttCallback *handler, uint8_t qos)
 {
-    char c_topic[topic.length()];
-    strcpy(c_topic, topic.c_str());
-    this->_subscribe(c_topic, qos);
+    this->_subscribe(topic, qos);
     this->callbacks.insert({topic, handler});
 }
 

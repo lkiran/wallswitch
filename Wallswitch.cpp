@@ -28,7 +28,7 @@ void Wallswitch::handleClick()
 {
 
 	MqttConnection &mqttConnection = MqttConnection::instance();
-	mqttConnection.publish(this->title, "clicked");
+	mqttConnection.publish(this->title.c_str(), "clicked");
 	if (this->led->getColor() == RGB::blue)
 		this->led->setColor(RGB::cyan);
 	else
@@ -40,7 +40,7 @@ void Wallswitch::handleDoubleClick()
 	this->haptic->poke();
 	this->haptic->poke();
 	MqttConnection &mqttConnection = MqttConnection::instance();
-	mqttConnection.publish(this->title, "double-clicked");
+	mqttConnection.publish(this->title.c_str(), "double-clicked");
 	if (this->led->getColor() == RGB::green)
 		this->led->setColor(RGB::yellow);
 	else
@@ -51,7 +51,7 @@ void Wallswitch::handleLongPressStart()
 {
 	this->haptic->poke();
 	MqttConnection &mqttConnection = MqttConnection::instance();
-	mqttConnection.publish(this->title, "long-pressed");
+	mqttConnection.publish(this->title.c_str(), "long-pressed");
 	if (this->led->getColor() == RGB::red)
 		this->led->setColor(RGB::magenta);
 	else
