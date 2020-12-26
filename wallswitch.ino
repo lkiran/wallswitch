@@ -53,10 +53,10 @@ void setup()
 	static LedCallback ledCallbackTopRight = LedCallback(rgbLedTopRight);
 	static LedCallback ledCallbackBottomLeft = LedCallback(rgbLedBottomLeft);
 	static LedCallback ledCallbackBottomRight = LedCallback(rgbLedBottomRight);
-	// mqttConnection.subscribe("/led/top-left", &ledCallbackTopLeft);
-	// mqttConnection.subscribe("/led/top-right", &ledCallbackTopRight);
-	// mqttConnection.subscribe("/led/bottom-left", &ledCallbackBottomLeft);
-	// mqttConnection.subscribe("/led/bottom-right", &ledCallbackBottomRight);
+	mqttConnection.subscribe("/led/top-left", &ledCallbackTopLeft);
+	mqttConnection.subscribe("/led/top-right", &ledCallbackTopRight);
+	mqttConnection.subscribe("/led/bottom-left", &ledCallbackBottomLeft);
+	mqttConnection.subscribe("/led/bottom-right", &ledCallbackBottomRight);
 
 	Serial.println("---------------setup completed---------------");
 

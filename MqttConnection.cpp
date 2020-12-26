@@ -83,11 +83,11 @@ boolean MqttConnection::publish(String &topic, String payload)
 	return result;
 }
 
-void MqttConnection::subscribe(String topic, MqttCallback *handler)
+void MqttConnection::subscribe(const String &topic, MqttCallback *handler)
 {
-	topic = WiFi.macAddress() + topic;
-	this->client.subscribe(topic, handler);
-	Serial.println("now subscribing: " + topic);
+	String t = WiFi.macAddress() + topic;
+	this->client.subscribe(t, handler);
+	Serial.println("now subscribing: " + t);
 }
 
 void MqttConnection::subscriptions()

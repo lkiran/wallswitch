@@ -28,7 +28,7 @@ public:
     boolean publish(String topic);
     boolean publish(String &topic);
     boolean publish(String &topic, String payload);
-    void subscribe(String topic, MqttCallback *handler);
+    void subscribe(const String &topic, MqttCallback *handler);
     void subscriptions();
     void tick();
 };
