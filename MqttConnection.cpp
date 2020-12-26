@@ -55,34 +55,39 @@ void MqttConnection::connect()
 void MqttConnection::tick()
 {
 	if (!this->client.connected())
-	{
 		this->connect();
-	}
+
 	this->client.loop();
 }
 
-boolean MqttConnection::publish(const char *topic)
+boolean MqttConnection::publish(String &topic)
 {
-	return this->publish(topic, "");
+	return publish(topic, "");
 }
 
-boolean MqttConnection::publish(const char *topic, const char *payload)
+boolean MqttConnection::publish(String topic)
 {
-	String t = WiFi.macAddress() + String(topic);
+	String t = String(topic);
+	return this->publish(t, "");
+}
+
+boolean MqttConnection::publish(String &topic, String payload)
+{
+	String t = WiFi.macAddress() + topic;
 	boolean result = this->client.publish(t, payload);
 	if (result == false)
-		Serial.println("publishing failed for " + String(topic) + " " + payload);
+		Serial.println("publishing failed for " + topic + " " + payload);
 	else
-		Serial.println("published " + String(topic) + " " + payload);
+		Serial.println("published " + topic + " " + payload);
 
 	return result;
 }
 
-void MqttConnection::subscribe(const char *topic, MqttCallback *handler)
+void MqttConnection::subscribe(String topic, MqttCallback *handler)
 {
-	String t = WiFi.macAddress() + String(topic);
-	this->client.subscribe(t.c_str(), handler);
-	Serial.println("now subscribing: " + String(topic));
+	topic = WiFi.macAddress() + topic;
+	this->client.subscribe(topic, handler);
+	Serial.println("now subscribing: " + topic);
 }
 
 void MqttConnection::subscriptions()

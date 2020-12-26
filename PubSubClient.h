@@ -164,8 +164,8 @@ public:
    // Write size bytes from buffer into the payload (only to be used with beginPublish/endPublish)
    // Returns the number of bytes written
    virtual size_t write(const uint8_t *buffer, size_t size);
-   void subscribe(const char* topic, MqttCallback *handler);
-   void subscribe(const char* topic, MqttCallback *handler, uint8_t qos);
+   void subscribe(String topic, MqttCallback *handler);
+   void subscribe(String topic, MqttCallback *handler, uint8_t qos);
    void unsubscribe(String topic);
    boolean loop();
    boolean connected();
