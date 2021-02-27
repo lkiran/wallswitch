@@ -1,0 +1,459 @@
+
+WiFi connected
+IP address: 10.0.0.38
+
+WiFi connected
+IP address: 10.0.0.38
+invalidate AB12CD34 at 1073422204, freeHeap: 276752
+invalidate ALTINTAS2 at 1073422188, freeHeap: 276752
+invalidate  at 1073422028, freeHeap: 276676
+MAC Address: 24:6F:28:AB:2D:C0
+invalidate 24:6F:28:AB:2D:C0 at 1073422092, freeHeap: 276608
+invalidate MAC Address: 24:6F:28:AB:2D:C0 at 1073422108, freeHeap: 276608
+MQTT connecting to: 10.0.0.51
+invalidate 24:6F:28:AB:2D:C0 at 1073422108, freeHeap: 274156
+MQTT connected
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073422108, freeHeap: 273788
+invalidate 24:6F:28:AB:2D:C0 at 1073422092, freeHeap: 273580
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073421944, freeHeap: 271508
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073422012, freeHeap: 271508
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073422092, freeHeap: 271508
+now subscribing: 24:6F:28:AB:2D:C0/led/top-left
+invalidate now subscribing: 24:6F:28:AB:2D:C0/led/top-left at 1073422108, freeHeap: 271444
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073422076, freeHeap: 271444
+invalidate /led/top-left at 1073422204, freeHeap: 271444
+invalidate 24:6F:28:AB:2D:C0/led/top-right at 1073422108, freeHeap: 271268
+invalidate 24:6F:28:AB:2D:C0 at 1073422092, freeHeap: 271268
+invalidate 24:6F:28:AB:2D:C0/led/top-right at 1073421944, freeHeap: 269876
+invalidate 24:6F:28:AB:2D:C0/led/top-right at 1073422012, freeHeap: 269876
+invalidate 24:6F:28:AB:2D:C0/led/top-right at 1073422092, freeHeap: 270940
+now subscribing: 24:6F:28:AB:2D:C0/led/top-right
+invalidate now subscribing: 24:6F:28:AB:2D:C0/led/top-right at 1073422108, freeHeap: 271100
+invalidate 24:6F:28:AB:2D:C0/led/top-right at 1073422076, freeHeap: 272404
+invalidate /led/top-right at 1073422204, freeHeap: 272404
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left at 1073422108, freeHeap: 272180
+invalidate 24:6F:28:AB:2D:C0 at 1073422092, freeHeap: 272180
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left at 1073421944, freeHeap: 270284
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left at 1073422012, freeHeap: 271588
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left at 1073422092, freeHeap: 271588
+now subscribing: 24:6F:28:AB:2D:C0/led/bottom-left
+invalidate now subscribing: 24:6F:28:AB:2D:C0/led/bottom-left at 1073422108, freeHeap: 271508
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left at 1073422076, freeHeap: 271508
+invalidate /led/bottom-left at 1073422204, freeHeap: 271508
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422108, freeHeap: 271284
+invalidate 24:6F:28:AB:2D:C0 at 1073422092, freeHeap: 271284
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073421944, freeHeap: 269388
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422012, freeHeap: 270692
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422092, freeHeap: 270692
+now subscribing: 24:6F:28:AB:2D:C0/led/bottom-right
+invalidate now subscribing: 24:6F:28:AB:2D:C0/led/bottom-right at 1073422108, freeHeap: 270612
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422076, freeHeap: 270612
+invalidate /led/bottom-right at 1073422204, freeHeap: 270612
+---------------setup completed---------------
+invalidate 24:6F:28:AB:2D:C0/start at 1073422028, freeHeap: 270468
+invalidate 24:6F:28:AB:2D:C0 at 1073422012, freeHeap: 270468
+invalidate  at 1073421996, freeHeap: 268380
+published /start 
+invalidate published /start  at 1073422028, freeHeap: 268332
+invalidate 24:6F:28:AB:2D:C0/start at 1073421980, freeHeap: 268832
+invalidate  at 1073422108, freeHeap: 268832
+invalidate /start at 1073422092, freeHeap: 268832
+invalidate /start at 1073422204, freeHeap: 268832
+invalidate 24:6F:28:AB:2D:C0/button/bottom-right at 1073422044, freeHeap: 271348
+invalidate 24:6F:28:AB:2D:C0 at 1073422028, freeHeap: 271348
+invalidate clicked at 1073422012, freeHeap: 269508
+published /button/bottom-right clicked
+invalidate published /button/bottom-right clicked at 1073422044, freeHeap: 269444
+invalidate 24:6F:28:AB:2D:C0/button/bottom-right at 1073421996, freeHeap: 269696
+invalidate clicked at 1073422108, freeHeap: 269696
+invalidate 24:6F:28:AB:2D:C0/button/bottom-right at 1073422044, freeHeap: 271108
+invalidate 24:6F:28:AB:2D:C0 at 1073422028, freeHeap: 271108
+invalidate clicked at 1073422012, freeHeap: 269268
+published /button/bottom-right clicked
+invalidate published /button/bottom-right clicked at 1073422044, freeHeap: 269456
+invalidate 24:6F:28:AB:2D:C0/button/bottom-right at 1073421996, freeHeap: 269456
+invalidate clicked at 1073422108, freeHeap: 269456
+invalidate 24:6F:28:AB:2D:C0/button/bottom-right at 1073422044, freeHeap: 270868
+invalidate 24:6F:28:AB:2D:C0 at 1073422028, freeHeap: 270868
+invalidate clicked at 1073422012, freeHeap: 269028
+published /button/bottom-right clicked
+invalidate published /button/bottom-right clicked at 1073422044, freeHeap: 269216
+invalidate 24:6F:28:AB:2D:C0/button/bottom-right at 1073421996, freeHeap: 269216
+invalidate clicked at 1073422108, freeHeap: 269216
+invalidate 24:6F:28:AB:2D:C0/button/bottom-right at 1073422044, freeHeap: 270628
+invalidate 24:6F:28:AB:2D:C0 at 1073422028, freeHeap: 270628
+invalidate clicked at 1073422012, freeHeap: 268788
+published /button/bottom-right clicked
+invalidate published /button/bottom-right clicked at 1073422044, freeHeap: 268976
+invalidate 24:6F:28:AB:2D:C0/button/bottom-right at 1073421996, freeHeap: 268976
+invalidate clicked at 1073422108, freeHeap: 268976
+invalidate 24:6F:28:AB:2D:C0/button/bottom-right at 1073422044, freeHeap: 267212
+invalidate 24:6F:28:AB:2D:C0 at 1073422028, freeHeap: 267212
+invalidate clicked at 1073422012, freeHeap: 267212
+published /button/bottom-right clicked
+invalidate published /button/bottom-right clicked at 1073422044, freeHeap: 267148
+invalidate 24:6F:28:AB:2D:C0/button/bottom-right at 1073421996, freeHeap: 267148
+invalidate clicked at 1073422108, freeHeap: 267148
+invalidate 24:6F:28:AB:2D:C0/button/top-right at 1073422044, freeHeap: 266972
+invalidate 24:6F:28:AB:2D:C0 at 1073422028, freeHeap: 266972
+invalidate clicked at 1073422012, freeHeap: 266972
+published /button/top-right clicked
+invalidate published /button/top-right clicked at 1073422044, freeHeap: 266908
+invalidate 24:6F:28:AB:2D:C0/button/top-right at 1073421996, freeHeap: 266908
+invalidate clicked at 1073422108, freeHeap: 266908
+invalidate 24:6F:28:AB:2D:C0/button/top-right at 1073422044, freeHeap: 269908
+invalidate 24:6F:28:AB:2D:C0 at 1073422028, freeHeap: 269908
+invalidate clicked at 1073422012, freeHeap: 268072
+published /button/top-right clicked
+invalidate published /button/top-right clicked at 1073422044, freeHeap: 268256
+invalidate 24:6F:28:AB:2D:C0/button/top-right at 1073421996, freeHeap: 268256
+invalidate clicked at 1073422108, freeHeap: 268256
+invalidate 24:6F:28:AB:2D:C0/button/bottom-right at 1073422044, freeHeap: 269668
+invalidate 24:6F:28:AB:2D:C0 at 1073422028, freeHeap: 269668
+invalidate clicked at 1073422012, freeHeap: 268080
+published /button/bottom-right clicked
+invalidate published /button/bottom-right clicked at 1073422044, freeHeap: 268016
+invalidate 24:6F:28:AB:2D:C0/button/bottom-right at 1073421996, freeHeap: 268016
+invalidate clicked at 1073422108, freeHeap: 268016
+invalidate 24:6F:28:AB:2D:C0/button/bottom-left at 1073422044, freeHeap: 269348
+invalidate 24:6F:28:AB:2D:C0 at 1073422028, freeHeap: 269348
+invalidate double-clicked at 1073422012, freeHeap: 267728
+published /button/bottom-left double-clicked
+invalidate published /button/bottom-left double-clicked at 1073422044, freeHeap: 267664
+invalidate 24:6F:28:AB:2D:C0/button/bottom-left at 1073421996, freeHeap: 267664
+invalidate double-clicked at 1073422108, freeHeap: 267664
+invalidate 24:6F:28:AB:2D:C0/button/bottom-left at 1073422044, freeHeap: 269044
+invalidate 24:6F:28:AB:2D:C0 at 1073422028, freeHeap: 269044
+invalidate double-clicked at 1073422012, freeHeap: 267424
+published /button/bottom-left double-clicked
+invalidate published /button/bottom-left double-clicked at 1073422044, freeHeap: 267360
+invalidate 24:6F:28:AB:2D:C0/button/bottom-left at 1073421996, freeHeap: 267360
+invalidate double-clicked at 1073422108, freeHeap: 267360
+invalidate 24:6F:28:AB:2D:C0/button/bottom-left at 1073422044, freeHeap: 268736
+invalidate 24:6F:28:AB:2D:C0 at 1073422028, freeHeap: 268736
+invalidate double-clicked at 1073422012, freeHeap: 267116
+published /button/bottom-left double-clicked
+invalidate published /button/bottom-left double-clicked at 1073422044, freeHeap: 267052
+invalidate 24:6F:28:AB:2D:C0/button/bottom-left at 1073421996, freeHeap: 267052
+invalidate double-clicked at 1073422108, freeHeap: 267052
+invalidate 24:6F:28:AB:2D:C0/button/top-left at 1073422044, freeHeap: 268460
+invalidate 24:6F:28:AB:2D:C0 at 1073422028, freeHeap: 268460
+invalidate clicked at 1073422012, freeHeap: 266876
+published /button/top-left clicked
+invalidate published /button/top-left clicked at 1073422044, freeHeap: 266812
+invalidate 24:6F:28:AB:2D:C0/button/top-left at 1073421996, freeHeap: 266812
+invalidate clicked at 1073422108, freeHeap: 266812
+invalidate 24:6F:28:AB:2D:C0/button/top-right at 1073422044, freeHeap: 268220
+invalidate 24:6F:28:AB:2D:C0 at 1073422028, freeHeap: 268220
+invalidate clicked at 1073422012, freeHeap: 266388
+published /button/top-right clicked
+invalidate published /button/top-right clicked at 1073422044, freeHeap: 266568
+invalidate 24:6F:28:AB:2D:C0/button/top-right at 1073421996, freeHeap: 266568
+invalidate clicked at 1073422108, freeHeap: 266568
+invalidate 24:6F:28:AB:2D:C0/button/bottom-right at 1073422044, freeHeap: 267976
+invalidate 24:6F:28:AB:2D:C0 at 1073422028, freeHeap: 267976
+invalidate clicked at 1073422012, freeHeap: 266136
+published /button/bottom-right clicked
+invalidate published /button/bottom-right clicked at 1073422044, freeHeap: 266328
+invalidate 24:6F:28:AB:2D:C0/button/bottom-right at 1073421996, freeHeap: 266328
+invalidate clicked at 1073422108, freeHeap: 266328
+invalidate #1C77A2htclickedlickedAB:2D:C0 at 1073422092, freeHeap: 267816
+24:6F:28:AB:2D:C0/led/top-right: #1C77A2
+invalidate 24:6F:28:AB:2D:C0/led/top-right: #1C77A2 at 1073422108, freeHeap: 267752
+invalidate #1C77A2 at 1073421948, freeHeap: 267704
+invalidate #1C77A2 at 1073422140, freeHeap: 267704
+invalidate 24:6F:28:AB:2D:C0/led/top-right at 1073422124, freeHeap: 267704
+invalidate #1C77A2 at 1073422076, freeHeap: 267704
+invalidate 24:6F:28:AB:2D:C0/led/top-right at 1073422028, freeHeap: 267704
+invalidate #109A64lickedlickedAB:2D:C0 at 1073422092, freeHeap: 267592
+24:6F:28:AB:2D:C0/led/bottom-right: #109A64
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right: #109A64 at 1073422108, freeHeap: 267528
+invalidate #109A64 at 1073421948, freeHeap: 267464
+invalidate #109A64 at 1073422140, freeHeap: 267464
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422124, freeHeap: 267464
+invalidate #109A64 at 1073422076, freeHeap: 267464
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422028, freeHeap: 267464
+invalidate #A71C1C4lickedlickedAB:2D:C0 at 1073422092, freeHeap: 267352
+24:6F:28:AB:2D:C0/led/bottom-left: #A71C1C
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left: #A71C1C at 1073422108, freeHeap: 267288
+invalidate #A71C1C at 1073421948, freeHeap: 267224
+invalidate #A71C1C at 1073422140, freeHeap: 267224
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left at 1073422124, freeHeap: 267224
+invalidate #A71C1C at 1073422076, freeHeap: 267224
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left at 1073422028, freeHeap: 267224
+invalidate #058854lickedlickedAB:2D:C0 at 1073422092, freeHeap: 267112
+24:6F:28:AB:2D:C0/led/bottom-right: #058854
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right: #058854 at 1073422108, freeHeap: 267048
+invalidate #058854 at 1073421948, freeHeap: 266984
+invalidate #058854 at 1073422140, freeHeap: 266776
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422124, freeHeap: 266776
+invalidate #058854 at 1073422076, freeHeap: 266984
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422028, freeHeap: 266984
+invalidate #C11C1C4lickedlickedAB:2D:C0 at 1073422092, freeHeap: 266872
+24:6F:28:AB:2D:C0/led/bottom-left: #C11C1C
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left: #C11C1C at 1073422108, freeHeap: 266808
+invalidate #C11C1C at 1073421948, freeHeap: 266744
+invalidate #C11C1C at 1073422140, freeHeap: 266744
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left at 1073422124, freeHeap: 266744
+invalidate #C11C1C at 1073422076, freeHeap: 266744
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left at 1073422028, freeHeap: 266744
+invalidate #16D88BlickedlickedAB:2D:C0 at 1073422092, freeHeap: 266632
+24:6F:28:AB:2D:C0/led/bottom-right: #16D88B
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right: #16D88B at 1073422108, freeHeap: 266568
+invalidate #16D88B at 1073421948, freeHeap: 266504
+invalidate #16D88B at 1073422140, freeHeap: 266504
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422124, freeHeap: 266504
+invalidate #16D88B at 1073422076, freeHeap: 266504
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422028, freeHeap: 266504
+invalidate #04324988BlickedlickedAB:2D:C0 at 1073422092, freeHeap: 266408
+24:6F:28:AB:2D:C0/led/top-right: #043249
+invalidate 24:6F:28:AB:2D:C0/led/top-right: #043249 at 1073422108, freeHeap: 266344
+invalidate #043249 at 1073421948, freeHeap: 266296
+invalidate #043249 at 1073422140, freeHeap: 266296
+invalidate 24:6F:28:AB:2D:C0/led/top-right at 1073422124, freeHeap: 266296
+invalidate #043249 at 1073422076, freeHeap: 266296
+invalidate 24:6F:28:AB:2D:C0/led/top-right at 1073422028, freeHeap: 266296
+invalidate #003620lickedlickedAB:2D:C0 at 1073422092, freeHeap: 266184
+24:6F:28:AB:2D:C0/led/bottom-right: #003620
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right: #003620 at 1073422108, freeHeap: 266120
+invalidate #003620 at 1073421948, freeHeap: 266056
+invalidate #003620 at 1073422140, freeHeap: 266056
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422124, freeHeap: 266056
+invalidate #003620 at 1073422076, freeHeap: 266056
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422028, freeHeap: 266056
+invalidate #4100000lickedlickedAB:2D:C0 at 1073422092, freeHeap: 265944
+24:6F:28:AB:2D:C0/led/bottom-left: #410000
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left: #410000 at 1073422108, freeHeap: 265880
+invalidate #410000 at 1073421948, freeHeap: 265816
+invalidate #410000 at 1073422140, freeHeap: 265816
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left at 1073422124, freeHeap: 265816
+invalidate #410000 at 1073422076, freeHeap: 265816
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left at 1073422028, freeHeap: 265816
+invalidate 24:6F:28:AB:2D:C0/button/top-left at 1073422044, freeHeap: 265640
+invalidate 24:6F:28:AB:2D:C0 at 1073422028, freeHeap: 265640
+invalidate clicked at 1073422012, freeHeap: 264056
+published /button/top-left clicked
+invalidate published /button/top-left clicked at 1073422044, freeHeap: 263992
+invalidate 24:6F:28:AB:2D:C0/button/top-left at 1073421996, freeHeap: 263992
+invalidate clicked at 1073422108, freeHeap: 263992
+invalidate 24:6F:28:AB:2D:C0/button/top-left at 1073422044, freeHeap: 263816
+invalidate 24:6F:28:AB:2D:C0 at 1073422028, freeHeap: 263816
+invalidate clicked at 1073422012, freeHeap: 262228
+published /button/top-left clicked
+invalidate published /button/top-left clicked at 1073422044, freeHeap: 262164
+invalidate 24:6F:28:AB:2D:C0/button/top-left at 1073421996, freeHeap: 262164
+invalidate clicked at 1073422108, freeHeap: 262164
+invalidate 24:6F:28:AB:2D:C0/button/top-left at 1073422044, freeHeap: 265152
+invalidate 24:6F:28:AB:2D:C0 at 1073422028, freeHeap: 265152
+invalidate clicked at 1073422012, freeHeap: 263320
+published /button/top-left clicked
+invalidate published /button/top-left clicked at 1073422044, freeHeap: 263500
+invalidate 24:6F:28:AB:2D:C0/button/top-left at 1073421996, freeHeap: 263500
+invalidate clicked at 1073422108, freeHeap: 263500
+invalidate 24:6F:28:AB:2D:C0/button/top-left at 1073422044, freeHeap: 264908
+invalidate 24:6F:28:AB:2D:C0 at 1073422028, freeHeap: 264908
+invalidate clicked at 1073422012, freeHeap: 263076
+published /button/top-left clicked
+invalidate published /button/top-left clicked at 1073422044, freeHeap: 263260
+invalidate 24:6F:28:AB:2D:C0/button/top-left at 1073421996, freeHeap: 263260
+invalidate clicked at 1073422108, freeHeap: 263260
+invalidate #5B5802lickedckedlickedAB:2D:C0 at 1073422092, freeHeap: 264748
+24:6F:28:AB:2D:C0/led/top-left: #5B5802
+invalidate 24:6F:28:AB:2D:C0/led/top-left: #5B5802 at 1073422108, freeHeap: 264684
+invalidate #5B5802 at 1073421948, freeHeap: 264636
+invalidate #5B5802 at 1073422140, freeHeap: 264636
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073422124, freeHeap: 264636
+invalidate #5B5802 at 1073422076, freeHeap: 264636
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073422028, freeHeap: 264636
+invalidate #02075BlickedckedlickedAB:2D:C0 at 1073422092, freeHeap: 264540
+24:6F:28:AB:2D:C0/led/top-left: #02075B
+invalidate 24:6F:28:AB:2D:C0/led/top-left: #02075B at 1073422108, freeHeap: 264476
+invalidate #02075B at 1073421948, freeHeap: 264428
+invalidate #02075B at 1073422140, freeHeap: 264428
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073422124, freeHeap: 264428
+invalidate #02075B at 1073422076, freeHeap: 264428
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073422028, freeHeap: 264428
+invalidate #000508lickedckedlickedAB:2D:C0 at 1073422092, freeHeap: 264332
+24:6F:28:AB:2D:C0/led/top-left: #000508
+invalidate 24:6F:28:AB:2D:C0/led/top-left: #000508 at 1073422108, freeHeap: 264268
+invalidate #000508 at 1073421948, freeHeap: 264220
+invalidate #000508 at 1073422140, freeHeap: 264220
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073422124, freeHeap: 264220
+invalidate #000508 at 1073422076, freeHeap: 264220
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073422028, freeHeap: 264220
+invalidate #0C000DickedckedlickedAB:2D:C0 at 1073422092, freeHeap: 264124
+24:6F:28:AB:2D:C0/led/top-right: #0C000D
+invalidate 24:6F:28:AB:2D:C0/led/top-right: #0C000D at 1073422108, freeHeap: 264060
+invalidate #0C000D at 1073421948, freeHeap: 264012
+invalidate #0C000D at 1073422140, freeHeap: 264012
+invalidate 24:6F:28:AB:2D:C0/led/top-right at 1073422124, freeHeap: 264012
+invalidate #0C000D at 1073422076, freeHeap: 264012
+invalidate 24:6F:28:AB:2D:C0/led/top-right at 1073422028, freeHeap: 264012
+invalidate #190000kedckedlickedAB:2D:C0 at 1073422092, freeHeap: 263900
+24:6F:28:AB:2D:C0/led/bottom-left: #190000
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left: #190000 at 1073422108, freeHeap: 263836
+invalidate #190000 at 1073421948, freeHeap: 263772
+invalidate #190000 at 1073422140, freeHeap: 263772
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left at 1073422124, freeHeap: 263772
+invalidate #190000 at 1073422076, freeHeap: 263772
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left at 1073422028, freeHeap: 263772
+invalidate #00110AedckedlickedAB:2D:C0 at 1073422092, freeHeap: 263660
+24:6F:28:AB:2D:C0/led/bottom-right: #00110A
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right: #00110A at 1073422108, freeHeap: 263596
+invalidate #00110A at 1073421948, freeHeap: 263532
+invalidate #00110A at 1073422140, freeHeap: 263532
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422124, freeHeap: 263532
+invalidate #00110A at 1073422076, freeHeap: 263532
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422028, freeHeap: 263532
+invalidate #010D15110AedckedlickedAB:2D:C0 at 1073422092, freeHeap: 263436
+24:6F:28:AB:2D:C0/led/top-left: #010D15
+invalidate 24:6F:28:AB:2D:C0/led/top-left: #010D15 at 1073422108, freeHeap: 263372
+invalidate #010D15 at 1073421948, freeHeap: 263324
+invalidate #010D15 at 1073422140, freeHeap: 263324
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073422124, freeHeap: 263324
+invalidate #010D15 at 1073422076, freeHeap: 263324
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073422028, freeHeap: 263324
+invalidate #000F19110AedckedlickedAB:2D:C0 at 1073422092, freeHeap: 263228
+24:6F:28:AB:2D:C0/led/top-left: #000F19
+invalidate 24:6F:28:AB:2D:C0/led/top-left: #000F19 at 1073422108, freeHeap: 263164
+invalidate #000F19 at 1073421948, freeHeap: 262908
+invalidate #000F19 at 1073422140, freeHeap: 263116
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073422124, freeHeap: 263116
+invalidate #000F19 at 1073422076, freeHeap: 263116
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073422028, freeHeap: 263116
+invalidate #001C2E110AedckedlickedAB:2D:C0 at 1073422092, freeHeap: 263020
+24:6F:28:AB:2D:C0/led/top-left: #001C2E
+invalidate 24:6F:28:AB:2D:C0/led/top-left: #001C2E at 1073422108, freeHeap: 262956
+invalidate #001C2E at 1073421948, freeHeap: 262908
+invalidate #001C2E at 1073422140, freeHeap: 262908
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073422124, freeHeap: 262908
+invalidate #001C2E at 1073422076, freeHeap: 262908
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073422028, freeHeap: 262908
+invalidate #00395E110AedckedlickedAB:2D:C0 at 1073422092, freeHeap: 262812
+24:6F:28:AB:2D:C0/led/top-left: #00395E
+invalidate 24:6F:28:AB:2D:C0/led/top-left: #00395E at 1073422108, freeHeap: 262748
+invalidate #00395E at 1073421948, freeHeap: 262700
+invalidate #00395E at 1073422140, freeHeap: 262700
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073422124, freeHeap: 262700
+invalidate #00395E at 1073422076, freeHeap: 262700
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073422028, freeHeap: 262700
+invalidate #008EEA110AedckedlickedAB:2D:C0 at 1073422092, freeHeap: 262604
+24:6F:28:AB:2D:C0/led/top-left: #008EEA
+invalidate 24:6F:28:AB:2D:C0/led/top-left: #008EEA at 1073422108, freeHeap: 262540
+invalidate #008EEA at 1073421948, freeHeap: 262492
+invalidate #008EEA at 1073422140, freeHeap: 262520
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073422124, freeHeap: 262492
+invalidate #008EEA at 1073422076, freeHeap: 262492
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073422028, freeHeap: 262492
+invalidate #00000010AedckedlickedAB:2D:C0 at 1073422092, freeHeap: 262396
+24:6F:28:AB:2D:C0/led/top-right: #000000
+invalidate 24:6F:28:AB:2D:C0/led/top-right: #000000 at 1073422108, freeHeap: 262332
+invalidate #000000 at 1073421948, freeHeap: 262284
+invalidate #000000 at 1073422140, freeHeap: 262284
+invalidate 24:6F:28:AB:2D:C0/led/top-right at 1073422124, freeHeap: 262284
+invalidate #000000 at 1073422076, freeHeap: 262284
+invalidate 24:6F:28:AB:2D:C0/led/top-right at 1073422028, freeHeap: 262284
+invalidate #000000edckedlickedAB:2D:C0 at 1073422092, freeHeap: 262172
+24:6F:28:AB:2D:C0/led/bottom-right: #000000
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right: #000000 at 1073422108, freeHeap: 262108
+invalidate #000000 at 1073421948, freeHeap: 262044
+invalidate #000000 at 1073422140, freeHeap: 262044
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422124, freeHeap: 262044
+invalidate #000000 at 1073422076, freeHeap: 262044
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422028, freeHeap: 262044
+invalidate #150000000edckedlickedAB:2D:C0 at 1073422092, freeHeap: 261948
+24:6F:28:AB:2D:C0/led/top-right: #150000
+invalidate 24:6F:28:AB:2D:C0/led/top-right: #150000 at 1073422108, freeHeap: 261884
+invalidate #150000 at 1073421948, freeHeap: 261836
+invalidate #150000 at 1073422140, freeHeap: 261836
+invalidate 24:6F:28:AB:2D:C0/led/top-right at 1073422124, freeHeap: 261836
+invalidate #150000 at 1073422076, freeHeap: 261836
+invalidate 24:6F:28:AB:2D:C0/led/top-right at 1073422028, freeHeap: 261836
+invalidate #0A00000edckedlickedAB:2D:C0 at 1073422092, freeHeap: 261724
+24:6F:28:AB:2D:C0/led/bottom-left: #0A0000
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left: #0A0000 at 1073422108, freeHeap: 261660
+invalidate #0A0000 at 1073421948, freeHeap: 261596
+invalidate #0A0000 at 1073422140, freeHeap: 261596
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left at 1073422124, freeHeap: 261596
+invalidate #0A0000 at 1073422076, freeHeap: 261596
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left at 1073422028, freeHeap: 261596
+invalidate #0500000edckedlickedAB:2D:C0 at 1073422092, freeHeap: 261484
+24:6F:28:AB:2D:C0/led/bottom-left: #050000
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left: #050000 at 1073422108, freeHeap: 261420
+invalidate #050000 at 1073421948, freeHeap: 261356
+invalidate #050000 at 1073422140, freeHeap: 261356
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left at 1073422124, freeHeap: 261356
+invalidate #050000 at 1073422076, freeHeap: 261356
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left at 1073422028, freeHeap: 261356
+invalidate #00060A0000edckedlickedAB:2D:C0 at 1073422092, freeHeap: 261260
+24:6F:28:AB:2D:C0/led/top-left: #00060A
+invalidate 24:6F:28:AB:2D:C0/led/top-left: #00060A at 1073422108, freeHeap: 261196
+invalidate #00060A at 1073421948, freeHeap: 261148
+invalidate #00060A at 1073422140, freeHeap: 261148
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073422124, freeHeap: 261148
+invalidate #00060A at 1073422076, freeHeap: 261148
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073422028, freeHeap: 261148
+invalidate #000000edckedlickedAB:2D:C0 at 1073422092, freeHeap: 261036
+24:6F:28:AB:2D:C0/led/bottom-right: #000000
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right: #000000 at 1073422108, freeHeap: 260972
+invalidate #000000 at 1073421948, freeHeap: 260908
+invalidate #000000 at 1073422140, freeHeap: 260908
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422124, freeHeap: 260908
+invalidate #000000 at 1073422076, freeHeap: 260908
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422028, freeHeap: 260908
+invalidate #4D0000edckedlickedAB:2D:C0 at 1073422092, freeHeap: 260796
+24:6F:28:AB:2D:C0/led/bottom-right: #4D0000
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right: #4D0000 at 1073422108, freeHeap: 260732
+invalidate #4D0000 at 1073421948, freeHeap: 260668
+invalidate #4D0000 at 1073422140, freeHeap: 260668
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422124, freeHeap: 260668
+invalidate #4D0000 at 1073422076, freeHeap: 260668
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422028, freeHeap: 260668
+invalidate #004D0EedckedlickedAB:2D:C0 at 1073422092, freeHeap: 260556
+24:6F:28:AB:2D:C0/led/bottom-right: #004D0E
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right: #004D0E at 1073422108, freeHeap: 260492
+invalidate #004D0E at 1073421948, freeHeap: 260428
+invalidate #004D0E at 1073422140, freeHeap: 260428
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422124, freeHeap: 260428
+invalidate #004D0E at 1073422076, freeHeap: 260428
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422028, freeHeap: 260428
+invalidate #002507edckedlickedAB:2D:C0 at 1073422092, freeHeap: 260316
+24:6F:28:AB:2D:C0/led/bottom-right: #002507
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right: #002507 at 1073422108, freeHeap: 260252
+invalidate #002507 at 1073421948, freeHeap: 260188
+invalidate #002507 at 1073422140, freeHeap: 260188
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422124, freeHeap: 260188
+invalidate #002507 at 1073422076, freeHeap: 260188
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422028, freeHeap: 260188
+invalidate #000902edckedlickedAB:2D:C0 at 1073422092, freeHeap: 260076
+24:6F:28:AB:2D:C0/led/bottom-right: #000902
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right: #000902 at 1073422108, freeHeap: 260012
+invalidate #000902 at 1073421948, freeHeap: 259944
+invalidate #000902 at 1073422140, freeHeap: 259944
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422124, freeHeap: 259944
+invalidate #000902 at 1073422076, freeHeap: 259944
+invalidate 24:6F:28:AB:2D:C0/led/bottom-right at 1073422028, freeHeap: 259944
+invalidate #000215902edckedlickedAB:2D:C0 at 1073422092, freeHeap: 259644
+24:6F:28:AB:2D:C0/led/top-right: #000215
+invalidate 24:6F:28:AB:2D:C0/led/top-right: #000215 at 1073422108, freeHeap: 259580
+invalidate #000215 at 1073421948, freeHeap: 259532
+invalidate #000215 at 1073422140, freeHeap: 259532
+invalidate 24:6F:28:AB:2D:C0/led/top-right at 1073422124, freeHeap: 259732
+invalidate #000215 at 1073422076, freeHeap: 259732
+invalidate 24:6F:28:AB:2D:C0/led/top-right at 1073422028, freeHeap: 259732
+invalidate #0405002edckedlickedAB:2D:C0 at 1073422092, freeHeap: 259620
+24:6F:28:AB:2D:C0/led/bottom-left: #040500
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left: #040500 at 1073422108, freeHeap: 259556
+invalidate #040500 at 1073421948, freeHeap: 259492
+invalidate #040500 at 1073422140, freeHeap: 259492
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left at 1073422124, freeHeap: 259492
+invalidate #040500 at 1073422076, freeHeap: 259204
+invalidate 24:6F:28:AB:2D:C0/led/bottom-left at 1073422028, freeHeap: 259492
+invalidate #00538A5002edckedlickedAB:2D:C0 at 1073422092, freeHeap: 259396
+24:6F:28:AB:2D:C0/led/top-left: #00538A
+invalidate 24:6F:28:AB:2D:C0/led/top-left: #00538A at 1073422108, freeHeap: 259332
+invalidate #00538A at 1073421948, freeHeap: 259284
+invalidate #00538A at 1073422140, freeHeap: 259284
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073422124, freeHeap: 259284
+invalidate #00538A at 1073422076, freeHeap: 259284
+invalidate 24:6F:28:AB:2D:C0/led/top-left at 1073422028, freeHeap: 259284
