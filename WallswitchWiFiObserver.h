@@ -32,7 +32,7 @@ void WallswitchWiFiObserver::Update(Subject &subject)
     {
         if (_wiFiConnection.getStatus() == WL_CONNECTED)
         {
-            Serial.println("");
+            Serial.println();
             Serial.println("WiFi connected");
             Serial.print("IP address: ");
             Serial.println(_wiFiConnection.getIP());
