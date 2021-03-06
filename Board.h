@@ -7,9 +7,10 @@ class Board
 {
 private:
 	static String MAC;
+	static void mac2String(byte ar[]);
 
 public:
-	static String getMacAddress(void);
+	static String &getMacAddress(void);
 };
 
 #endif
