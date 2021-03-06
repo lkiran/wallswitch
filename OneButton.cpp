@@ -42,7 +42,7 @@ OneButton::OneButton(int pin, int activeLow, bool pullupActive)
   {
     // the button connects the input pin to VCC when pressed.
     _buttonPressed = HIGH;
-  } // if
+  }
 
   if (pullupActive)
   {
@@ -53,7 +53,7 @@ OneButton::OneButton(int pin, int activeLow, bool pullupActive)
   {
     // use the given pin as input
     pinMode(pin, INPUT);
-  } // if
+  }
 } // OneButton
 
 void OneButton::handleClick(void) {}
@@ -135,7 +135,8 @@ void OneButton::tick(bool activeLevel)
     {
       _state = 1;       // step to state 1
       _startTime = now; // remember starting time
-    }                   // if
+      handlePress();
+    }
   }
   else if (_state == 1)
   { // waiting for menu pin being released.
@@ -156,7 +157,6 @@ void OneButton::tick(bool activeLevel)
              ((unsigned long)(now - _startTime) > _pressTicks))
     {
       _isLongPressed = true; // Keep track of long press state
-      handlePress();
       handleLongPressStart();
       handleDuringLongPress();
       _state = 6;      // step to state 6
@@ -165,7 +165,7 @@ void OneButton::tick(bool activeLevel)
     else
     {
       // wait. Stay in this state.
-    } // if
+    }
   }
   else if (_state == 2)
   {
@@ -182,7 +182,8 @@ void OneButton::tick(bool activeLevel)
     {
       _state = 3;       // step to state 3
       _startTime = now; // remember starting time
-    }                   // if
+      handlePress();
+    }
   }
   else if (_state == 3)
   { // waiting for menu pin being released finally.
@@ -195,7 +196,7 @@ void OneButton::tick(bool activeLevel)
       handleDoubleClick();
       _state = 0;      // restart.
       _stopTime = now; // remember stopping time
-    }                  // if
+    }
   }
   else if (_state == 6)
   {
@@ -212,9 +213,8 @@ void OneButton::tick(bool activeLevel)
       // button is being long pressed
       _isLongPressed = true; // Keep track of long press state
       handleDuringLongPress();
-    } // if
-
-  } // if
+    }
+  }
 } // OneButton.tick()
 
 // end.
