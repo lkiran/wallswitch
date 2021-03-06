@@ -398,7 +398,7 @@ boolean PubSubClient::loop()
                     memmove(this->buffer + llen + 2, this->buffer + llen + 3, tl);        /* move topic inside buffer 1 byte to front */
                     this->buffer[llen + 2 + tl] = 0;                                      /* end the topic as a 'C' string with \x00 */
                     String topic = String((char *)this->buffer + llen + 2);
-
+                    topic.setKeep(false);
                     std::map<String, MqttCallback *>::iterator callbackPair = this->callbacks.find(topic);
                     if (callbackPair != this->callbacks.end())
                     {
@@ -408,7 +408,11 @@ boolean PubSubClient::loop()
                         {
                             msgId = (this->buffer[llen + 3 + tl] << 8) + this->buffer[llen + 3 + tl + 1];
                             String payload = String((char *)(this->buffer + llen + 3 + tl + 2)).substring(0, len - llen - 3 - tl - 2);
+                            Serial.print(topic);
+                            Serial.print(": ");
+                            Serial.println(payload);
                             callback->handle(topic, payload);
+                            payload.setKeep(false);
 
                             this->buffer[0] = MQTTPUBACK;
                             this->buffer[1] = 2;
@@ -420,8 +424,11 @@ boolean PubSubClient::loop()
                         else
                         {
                             String payload = String((char *)(this->buffer + llen + 3 + tl)).substring(0, len - llen - 3 - tl);
-                            Serial.println(topic + ": " + payload);
+                            Serial.print(topic);
+                            Serial.print(": ");
+                            Serial.println(payload);
                             callback->handle(topic, payload);
+                            payload.setKeep(false);
                         }
                     }
                 }
@@ -450,9 +457,9 @@ boolean PubSubClient::loop()
 boolean PubSubClient::publish(String &topic, String payload)
 {
     byte *p = (byte *)malloc(payload.length());
-	memcpy(p, payload.c_str(), payload.length());
-    boolean result =  publish(topic.c_str(), payload.c_str());
-	free(p);
+    memcpy(p, payload.c_str(), payload.length());
+    boolean result = publish(topic.c_str(), payload.c_str());
+    free(p);
 
     return result;
 }
@@ -687,12 +694,12 @@ boolean PubSubClient::_subscribe(const char *topic, uint8_t qos)
     return false;
 }
 
-void PubSubClient::subscribe(String topic, MqttCallback *handler)
+void PubSubClient::subscribe(String &topic, MqttCallback *handler)
 {
     this->subscribe(topic, handler, 0);
 }
 
-void PubSubClient::subscribe(String topic, MqttCallback *handler, uint8_t qos)
+void PubSubClient::subscribe(String &topic, MqttCallback *handler, uint8_t qos)
 {
     char c_topic[topic.length()];
     strcpy(c_topic, topic.c_str());
@@ -728,7 +735,7 @@ boolean PubSubClient::_unsubscribe(const char *topic)
     return false;
 }
 
-void PubSubClient::unsubscribe(String topic)
+void PubSubClient::unsubscribe(String &topic)
 {
     char c_topic[topic.length()];
     strcpy(c_topic, topic.c_str());

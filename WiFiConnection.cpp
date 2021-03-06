@@ -23,7 +23,7 @@ IPAddress WiFiConnection::getIP()
     return WiFi.localIP();
 }
 
-void WiFiConnection::connect(String ssid, String password)
+void WiFiConnection::connect(const String ssid, const String password)
 {
     this->ssid = ssid;
     this->password = password;
