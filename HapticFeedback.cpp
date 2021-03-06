@@ -40,6 +40,6 @@ void HapticFeedback::update()
 
 void HapticFeedback::poke()
 {
-  this->instructionQueue.push_back(HapticFeedback::Instruction{on, 300});
-  this->instructionQueue.push_back(HapticFeedback::Instruction{off, 100});
+  this->instructionQueue.push_back(HapticFeedback::Instruction{on, 150});
+  this->instructionQueue.push_back(HapticFeedback::Instruction{off, 50});
 }
