@@ -6,17 +6,17 @@ void RgbLed::driveLeds(RGB color)
 {
 	if (this->redPin)
 	{
-		ledcWrite(this->redChannel, 255 - color.getRed());
+		ledcWrite(this->redChannel, 256 - color.getRed());
 	}
 
 	if (this->greenPin)
 	{
-		ledcWrite(this->greenChannel, 255 - color.getGreen());
+		ledcWrite(this->greenChannel, 256 - color.getGreen());
 	}
 
 	if (this->bluePin)
 	{
-		ledcWrite(this->blueChannel, 255 - color.getBlue());
+		ledcWrite(this->blueChannel, 256 - color.getBlue());
 	}
 }
 
