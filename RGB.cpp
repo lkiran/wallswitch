@@ -13,7 +13,13 @@ RGB::RGB(int red = 0, int green = 0, int blue = 0)
 
 RGB::RGB(String code)
 {
-	long long number = strtoll(&code[1], NULL, 16);
+	long long number;
+	if(code.length() == 6)
+		number = strtoll(&code[0], NULL, 16);
+	else if(code.length() == 7)
+		number = strtoll(&code[1], NULL, 16);
+	else
+		return;
 
 	this->redValue = number >> 16;
 	this->greenValue = number >> 8 & 0xFF;
