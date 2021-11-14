@@ -7,7 +7,7 @@
 #include "MqttConnection.h"
 #include "LedCallback.h"
 
-// TempreratureSensor tempreratureSensor(26);
+TempreratureSensor tempreratureSensor(26);
 HapticFeedback hapticFeedback(23);
 
 RgbLed rgbLedTopLeft(18, 5, 17);
@@ -44,7 +44,7 @@ void setup()
 	buttonBottomRight.setLed(&rgbLedBottomRight);
 
 	WallswitchWiFiObserver(wifiConnection, rgbLedTopLeft);
-	wifiConnection.connect("ALTINTAS2", "AB12CD34");
+	wifiConnection.connect("KIRAN", "altintas");
 
 	mqttConnection.configure("10.0.0.51");
 	mqttConnection.connect();
@@ -65,7 +65,7 @@ void setup()
 
 void loop()
 {
-	// tempreratureSensor.update();
+	tempreratureSensor.tick();
 	hapticFeedback.update();
 	buttonTopLeft.tick();
 	buttonTopRight.tick();

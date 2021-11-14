@@ -72,6 +72,13 @@ boolean MqttConnection::publish(String topic)
 	return this->publish(t, emptyString);
 }
 
+boolean MqttConnection::publish(String &topic, float payload)
+{
+	String p = String(payload);
+	return this->publish(topic, p);
+}
+
+
 boolean MqttConnection::publish(String &topic, String payload)
 {
 	String t = WiFi.macAddress() + topic;
