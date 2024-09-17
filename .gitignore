@@ -1,2 +1,5 @@
 build
 .vscode
+cmake-build-debug
+managed_components
+.DS_Store
