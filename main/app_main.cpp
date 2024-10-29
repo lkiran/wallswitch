@@ -8,11 +8,13 @@
 #include "WifiConnection.hpp"
 #include "RgbLed.hpp"
 #include "Haptic.hpp"
+#include "Temperature.hpp"
 
 
 static const char *TAG = "MAIN";
 
-extern "C" void app_main(void) {
+extern "C"
+void app_main(void) {
     esp_log_level_set("*", ESP_LOG_NONE);
     esp_log_level_set("MAIN", ESP_LOG_INFO);
     esp_log_level_set("WIFI", ESP_LOG_INFO);
@@ -21,11 +23,13 @@ extern "C" void app_main(void) {
     esp_log_level_set("WALLSWITCH", ESP_LOG_INFO);
     esp_log_level_set("RGB_LED", ESP_LOG_INFO);
     esp_log_level_set("HAPTIC", ESP_LOG_INFO);
+    esp_log_level_set("TEMPERATURE", ESP_LOG_ERROR);
 
     ESP_LOGI(TAG, "Startup..");
     ESP_LOGI(TAG, "Free memory: %" PRIu32 " bytes", esp_get_free_heap_size());
     ESP_LOGI(TAG, "IDF version: %s", esp_get_idf_version());
 
+    Temperature temperature(GPIO_NUM_26);
     Haptic haptic(GPIO_NUM_23);
 
     Wallswitch buttonTopLeft("top-left", GPIO_NUM_19);
@@ -43,4 +47,6 @@ extern "C" void app_main(void) {
     ESP_ERROR_CHECK(esp_event_loop_create_default());
     ESP_ERROR_CHECK(WifiConnection::connect());
     ESP_ERROR_CHECK(MqttClient::start());
+    ESP_ERROR_CHECK(Temperature::start());
 }
+

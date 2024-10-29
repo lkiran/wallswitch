@@ -9,6 +9,7 @@ set(SOURCES
         rgbLed/color/RGB.cpp
         rgbLed/color/RGBA.cpp
         haptic/Haptic.cpp
+        temperature/Temperature.cpp
 )
 
 set(INCLUDES
@@ -22,6 +23,7 @@ set(INCLUDES
         rgbLed/driver
         rgbLed/color
         haptic
+        temperature
         )
 
 idf_component_register(

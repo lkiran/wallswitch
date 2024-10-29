@@ -23,6 +23,17 @@ dependencies:
       registry_url: https://components.espressif.com/
       type: service
     version: 0.5.3
+  espressif/ds18b20:
+    component_hash: d676429d9f1f686b65ed895e418eb4b331477bcd5d63c27f43dc3d6a2de8f13b
+    dependencies:
+    - name: espressif/onewire_bus
+      registry_url: https://components.espressif.com/
+      require: private
+      version: ^1.0.0
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 0.1.1
   espressif/led_indicator:
     component_hash: 7a95d7eb331a71a0dc29ef904a6b6b513fa23f0ce42776545a1e950c40ee94bc
     dependencies:
@@ -51,14 +62,25 @@ dependencies:
       registry_url: https://components.espressif.com/
       type: service
     version: 2.5.5
+  espressif/onewire_bus:
+    component_hash: c4c781940d8bd988432b47ac3ee68479c69e14e01fdfba0b61365b233a3ba5d6
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=5.0'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.0.2
   idf:
     source:
       type: idf
     version: 5.3.0
 direct_dependencies:
 - espressif/button
+- espressif/ds18b20
 - espressif/led_indicator
 - idf
-manifest_hash: 9f968dea3e27c9af332717d823d9d3d1441545fcac32d7609e21b7cd97a93a5b
+manifest_hash: 0c5dad067e55efbd34a4f21ff4a5f7dde934d78d588148bb6b40e2797cfe0328
 target: esp32
 version: 2.0.0
