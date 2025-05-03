@@ -69,7 +69,7 @@ esp_err_t Temperature::start() {
     };
     esp_timer_handle_t timer;
     ESP_ERROR_CHECK(esp_timer_create(&timer_args, &timer));
-    // Start the timer with a 5-second period
-    ESP_ERROR_CHECK(esp_timer_start_periodic(timer, 5000000));
+    // Start the timer with a 60-second period
+    ESP_ERROR_CHECK(esp_timer_start_periodic(timer, 60000000));
     return ESP_OK;
 }
