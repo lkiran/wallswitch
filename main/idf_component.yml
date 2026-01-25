@@ -1,11 +1,11 @@
 ## IDF Component Manager Manifest File
 dependencies:
-  espressif/ds18b20: "^0.1.1"
-  espressif/led_indicator: "^0.9.2"
-  espressif/button: "^3.2.0"
+  espressif/ds18b20: "0.1.1"
+  espressif/led_indicator: "0.9.2"
+  espressif/button: "3.2.0"
   ## Required IDF version
   idf:
-    version: ">=4.1.0"
+    version: "5.3.0"
   # # Put list of dependencies here
   # # For components maintained by Espressif:
   # component: "~1.0.0"

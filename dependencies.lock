@@ -2,13 +2,13 @@ dependencies:
   espressif/button:
     component_hash: 1f5297fe16f0ee988dbb14b6f4c91782fe2baf85025bb15cc1e0093edd3fb2ee
     dependencies:
-    - name: espressif/cmake_utilities
-      registry_url: https://components.espressif.com/
-      require: private
-      version: 0.*
     - name: idf
       require: private
       version: '>=4.0'
+    - name: espressif/cmake_utilities
+      registry_url: https://components.espressif.com
+      require: private
+      version: 0.*
     source:
       registry_url: https://components.espressif.com/
       type: service
@@ -20,14 +20,14 @@ dependencies:
       require: private
       version: '>=4.1'
     source:
-      registry_url: https://components.espressif.com/
+      registry_url: https://components.espressif.com
       type: service
     version: 0.5.3
   espressif/ds18b20:
     component_hash: d676429d9f1f686b65ed895e418eb4b331477bcd5d63c27f43dc3d6a2de8f13b
     dependencies:
     - name: espressif/onewire_bus
-      registry_url: https://components.espressif.com/
+      registry_url: https://components.espressif.com
       require: private
       version: ^1.0.0
     source:
@@ -37,15 +37,15 @@ dependencies:
   espressif/led_indicator:
     component_hash: 7a95d7eb331a71a0dc29ef904a6b6b513fa23f0ce42776545a1e950c40ee94bc
     dependencies:
-    - name: espressif/cmake_utilities
-      registry_url: https://components.espressif.com/
-      require: private
-      version: 0.*
     - name: idf
       require: private
       version: '>=4.0'
+    - name: espressif/cmake_utilities
+      registry_url: https://components.espressif.com
+      require: private
+      version: 0.*
     - name: espressif/led_strip
-      registry_url: https://components.espressif.com/
+      registry_url: https://components.espressif.com
       require: public
       version: '>=2.5.2'
     source:
@@ -53,25 +53,25 @@ dependencies:
       type: service
     version: 0.9.2
   espressif/led_strip:
-    component_hash: 28c6509a727ef74925b372ed404772aeedf11cce10b78c3f69b3c66799095e2d
-    dependencies:
-    - name: idf
-      require: private
-      version: '>=4.4'
-    source:
-      registry_url: https://components.espressif.com/
-      type: service
-    version: 2.5.5
-  espressif/onewire_bus:
-    component_hash: c4c781940d8bd988432b47ac3ee68479c69e14e01fdfba0b61365b233a3ba5d6
+    component_hash: f0d1b7f93eb3ee57bcfd220656176b0b5616e1947f89ed44364555cf910c4840
     dependencies:
     - name: idf
       require: private
       version: '>=5.0'
     source:
-      registry_url: https://components.espressif.com/
+      registry_url: https://components.espressif.com
       type: service
-    version: 1.0.2
+    version: 3.0.2
+  espressif/onewire_bus:
+    component_hash: 11729fd9a5de80225177a61e9cd77de91683b8ec300e83710d5327b666dbe884
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=5.0'
+    source:
+      registry_url: https://components.espressif.com
+      type: service
+    version: 1.0.4
   idf:
     source:
       type: idf
@@ -81,6 +81,6 @@ direct_dependencies:
 - espressif/ds18b20
 - espressif/led_indicator
 - idf
-manifest_hash: 0c5dad067e55efbd34a4f21ff4a5f7dde934d78d588148bb6b40e2797cfe0328
+manifest_hash: 8a0c79c98f3ba9a43264ca2e2aba8767ce830b3047a3e62999475aaf71de1447
 target: esp32
 version: 2.0.0
